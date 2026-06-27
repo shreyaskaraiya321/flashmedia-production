@@ -17,71 +17,146 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="logo">
-                <img src="logo.png" alt="Flashmeidia">
+                <img src="copy of kudre logo.jpg" alt="Flashmeidia">
             </div>
             <div class="nav-links desktop-only">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#work">Our Work</a>
-                <a href="#ajinkyan">Ajinkyan</a>
-                <a href="#careers">Careers</a>
-                <a href="#collab">Collab With Us</a>
+                <a href="#home" onclick="showHomeView()">Home</a>
+                <a href="#about" onclick="showAboutView(event)">About</a>
+                <a href="#work" onclick="showWorkView(event)">Our Work</a>
+                <a href="#work" onclick="showWorkView(event)">Ajinkyan</a>
             </div>
-            <div class="nav-actions desktop-only">
-                <button class="btn ghost">Sign In</button>
-                <button class="btn filled">Join</button>
+            <div class="nav-actions">
+                <button class="btn ghost outline nav-contact-btn" onclick="openApplyModal()" style="border: 1px solid #C4916A; color: #C4916A; background: transparent; padding: 10px 24px; border-radius: 6px; font-family: var(--font-body); font-weight: 500; font-size: 14px;">Contact for a Role</button>
             </div>
-            <button class="mobile-menu-btn mobile-only" id="mobile-menu-btn" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
         </div>
     </nav>
     
-    <!-- Mobile Drawer -->
-    <div class="mobile-drawer" id="mobile-drawer">
-        <div class="mobile-drawer-inner">
-            <a href="#home" class="drawer-link">Home</a>
-            <a href="#about" class="drawer-link">About</a>
-            <a href="#work" class="drawer-link">Our Work</a>
-            <a href="#ajinkyan" class="drawer-link">Ajinkyan</a>
-            <a href="#careers" class="drawer-link">Careers</a>
-            <a href="#collab" class="drawer-link">Collab With Us</a>
-            <div class="drawer-actions">
-                <button class="btn ghost">Sign In</button>
-                <button class="btn filled">Join</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 2. HERO SECTION -->
-    <section class="hero" id="home">
-        <div class="hero-noise"></div>
-        <div class="hero-content">
-            <div class="hero-tag">[ EST. 2024 &middot; FILM PRODUCTION ]</div>
-            <h1 class="hero-heading">We Frame<br>the Extraordinary.</h1>
-            <p class="hero-subtext">
-                Flashmeidia Film Production brings stories to life through cinematic vision, <br class="desktop-only">artistic integrity, and bold creative direction.
-            </p>
-            <div class="hero-ctas">
-                <button class="btn filled">Explore Our Work</button>
-                <button class="btn ghost outline">Collab With Us</button>
-            </div>
-        </div>
-        
-        <div class="hero-marquee-wrapper">
-            <div class="hero-divider"></div>
-            <div class="hero-marquee">
-                <div class="marquee-content">
-                    FILM PRODUCTION &middot; CASTING &middot; KUDREES &middot; AJINKYAN &middot; CREATIVE CAREERS &middot; CONTENT PROMOTION &middot; 
-                    FILM PRODUCTION &middot; CASTING &middot; KUDREES &middot; AJINKYAN &middot; CREATIVE CAREERS &middot; CONTENT PROMOTION &middot; 
+    <!-- Main Content Wrapper -->
+    <div id="main-content">
+        <!-- 2. HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-noise"></div>
+            <div class="hero-content" style="padding-top: 160px;">
+                <img src="copy of kudre logo.jpg" alt="Flashmeidia Logo" style="width: 72px; height: auto; margin-bottom: 32px; display: block; margin-left: auto; margin-right: auto; border-radius: 4px;">
+                <div class="hero-tag">[ EST. 2024 &middot; FILM PRODUCTION ]</div>
+                <h1 class="hero-heading">We Frame<br>the Extraordinary.</h1>
+                <p class="hero-subtext">
+                    Flashmeidia Film Production brings stories to life through cinematic vision, <br class="desktop-only">artistic integrity, and bold creative direction.
+                </p>
+                <div class="hero-ctas">
+                    <button class="btn filled">Explore Our Work</button>
+                    <button class="btn ghost outline" onclick="openApplyModal()">Contact for a Role</button>
                 </div>
             </div>
+            
+            <div class="hero-marquee-wrapper">
+                <div class="hero-divider"></div>
+                <div class="hero-marquee">
+                    <div class="marquee-content">
+                        FILM PRODUCTION &middot; CASTING &middot; CONTENT CREATION &middot; ORIGINAL FILM &middot; CREATIVE CAREERS &middot; COLLAB WITH US &middot; 
+                        FILM PRODUCTION &middot; CASTING &middot; CONTENT CREATION &middot; ORIGINAL FILM &middot; CREATIVE CAREERS &middot; COLLAB WITH US &middot; 
+                    </div>
+                </div>
+                <div class="hero-image-marquee">
+                    <div class="image-marquee-content">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.14 AM (1).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.14 AM.jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.15 AM (1).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.15 AM (2).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.15 AM (3).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.15 AM (4).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.15 AM.jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.16 AM (3).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.16 AM.jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.17 AM (1).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.17 AM (2).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.18 AM (1).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.18 AM (2).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.18 AM (3).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.18 AM.jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.19 AM (1).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.19 AM (3).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.19 AM.jpeg" alt="">
+                        <!-- Duplicate for infinite loop -->
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.14 AM (1).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.14 AM.jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.15 AM (1).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.15 AM (2).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.15 AM (3).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.15 AM (4).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.15 AM.jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.16 AM (3).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.16 AM.jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.17 AM (1).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.17 AM (2).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.18 AM (1).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.18 AM (2).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.18 AM (3).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.18 AM.jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.19 AM (1).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.19 AM (3).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.19 AM.jpeg" alt="">
+                        <!-- Third copy for seamless loop -->
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.14 AM (1).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.14 AM.jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.15 AM (1).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.15 AM (2).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.15 AM (3).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.15 AM (4).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.15 AM.jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.16 AM (3).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.16 AM.jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.17 AM (1).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.17 AM (2).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.18 AM (1).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.18 AM (2).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.18 AM (3).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.18 AM.jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.19 AM (1).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.19 AM (3).jpeg" alt="">
+                        <img src="assets/WhatsApp Image 2026-06-27 at 11.43.19 AM.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <!-- 7. CAREERS -->
+    <section class="careers" id="careers">
+        <h2 class="section-heading text-center mb-large">Find Your Role in the Frame</h2>
+        <div class="careers-subtext text-center" style="font-family: var(--font-body); color: #7A7575; font-size: 18px; margin-bottom: 2rem;">
+            Whether you're in front of the camera or behind it &mdash; there's a place for you here.
+        </div>
+        <div class="text-center">
+            <button class="btn ghost outline contact-role-btn" onclick="openApplyModal()">Contact for a Role</button>
         </div>
     </section>
 
+
+    <!-- 8. FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="copy of kudre logo.jpg" alt="Flashmeidia">
+        </div>
+        <div class="footer-nav">
+            <a href="#home" onclick="showHomeView()">Home</a>
+            <a href="#about" onclick="showAboutView(event)">About</a>
+            <a href="#work" onclick="showWorkView(event)">Our Work</a>
+            <a href="#work" onclick="showWorkView(event)">Ajinkyan</a>
+        </div>
+        <div class="footer-socials">
+            <a href="https://www.instagram.com/flashmedia.production/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.linkedin.com/in/shubham-kudre-6572a936b/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Flashmeidia Film Production. All rights reserved.
+        </div>
+    </footer>
+    </div> <!-- End #main-content -->
+
     <!-- 3. ABOUT / PROFILE SECTION -->
-    <section class="about" id="about">
-        <div class="about-container grid-2-col">
+    <section class="about hidden" id="about" style="min-height: 80vh; display: flex; align-items: center;">
+        <div class="about-container grid-2-col" style="width: 100%;">
             <div class="about-content">
                 <div class="section-tag">[ WHO WE ARE ]</div>
                 <h2 class="section-heading">A Production House Built on Craft.</h2>
@@ -95,197 +170,177 @@
                 </div>
             </div>
             <div class="about-image">
-                <div class="placeholder-box">
-                    <span>SHOWREEL / IMAGE</span>
-                </div>
+                <img src="assets/poster.jpg" alt="A film Written and Directed by Shubham Kudre" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block;">
             </div>
         </div>
     </section>
 
-    <!-- 4. WHAT WE DO (Services) -->
-    <section class="services" id="work">
-        <h2 class="section-heading text-center">Our Work Spans Every Frame</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"></div>
-                <h3 class="service-title">Film Production</h3>
-                <p class="service-desc">Crafting original stories with cinematic excellence.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"></div>
-                <h3 class="service-title">Casting & Talent</h3>
-                <p class="service-desc">Discovering and nurturing the faces of tomorrow.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"></div>
-                <h3 class="service-title">Kudrees</h3>
-                <p class="service-desc">Specialized creative projects and experimental media.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"></div>
-                <h3 class="service-title">Content Creator Promotion</h3>
-                <p class="service-desc">Elevating voices with professional production support.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. AJINKYAN SPOTLIGHT -->
-    <section class="ajinkyan" id="ajinkyan">
-        <div class="ajinkyan-bg"></div>
-        <div class="ajinkyan-container grid-2-col">
-            <div class="ajinkyan-content">
-                <div class="section-tag">[ ORIGINAL FILM ]</div>
-                <h2 class="ajinkyan-title">Ajinkyan</h2>
-                <p class="ajinkyan-desc">
-                    An original film by Flashmeidia &mdash; a story of ambition, identity, and the world behind the lens.
+    <!-- Work View Wrapper -->
+    <div id="work-view" class="hidden" style="max-width: 1100px; margin: 0 auto; padding: 100px 40px;">
+        <!-- CURRENT PROJECT DISPLAY SECTION -->
+        <section class="current-production" id="production" style="padding: 0; margin-bottom: 80px;">
+            <div class="section-tag">[ NOW FILMING ]</div>
+            <h2 class="section-heading">Inside the Frame</h2>
+            <div class="production-card">
+                <h3 class="production-title">Ajinkyan</h3>
+                <div class="production-genre">[ DRAMA &middot; SOCIAL ]</div>
+                <p class="production-story">
+                    Ajinkyan is a deeply human story set against the backdrop of a school, tracing the life of a soldier &mdash; his sacrifices, his identity, and the world he leaves behind. A story about what it means to serve and to belong.
                 </p>
-                <div class="ajinkyan-actions">
-                    <button class="btn filled">Support the Film</button>
-                    <button class="btn ghost outline">Join the Casting</button>
-                </div>
-            </div>
-            <div class="ajinkyan-timer-wrapper">
-                <div class="timer-label">[ RELEASING IN ]</div>
-                <div class="countdown-timer" id="countdown">
-                    <div class="time-box"><span id="days">00</span><small>Days</small></div>
-                    <div class="time-sep">:</div>
-                    <div class="time-box"><span id="hours">00</span><small>Hours</small></div>
-                    <div class="time-sep">:</div>
-                    <div class="time-box"><span id="minutes">00</span><small>Mins</small></div>
-                    <div class="time-sep">:</div>
-                    <div class="time-box"><span id="seconds">00</span><small>Secs</small></div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="production-media">
+                    <div class="media-box-wrapper">
+                        <div class="timer-label text-center mb-small" style="color: var(--accent); margin-bottom: 0.5rem;">TEASER</div>
+                        <video 
+                          src="assets/ajinkyan-teaser.mp4" 
+                          controls 
+                          playsinline 
+                          preload="metadata"
+                          style="width:100%; border-radius:6px; background:#1C1C1E; display:block;">
+                        </video>
+                        <div style="text-align: center; margin-top: 12px;">
+                            <a href="https://www.instagram.com/reel/DZsAuJhziv8/" target="_blank" class="instagram-reel-link">View on Instagram ↗</a>
+                        </div>
+                    </div>
 
-    <!-- 6. COLLAB / SUBSCRIPTION SECTION -->
-    <section class="collab" id="collab">
-        <h2 class="section-heading text-center">Collab With Flashmeidia</h2>
-        <div class="collab-grid">
-            <div class="collab-card">
-                <div class="tier-name">Follower</div>
-                <div class="tier-price">Free</div>
-                <ul class="tier-features">
-                    <li>Browse content</li>
-                    <li>Apply to castings</li>
-                </ul>
-                <button class="btn ghost outline full-width">Get Started</button>
+                </div>
+                <a href="#" class="production-link">Watch on Instagram &nearr;</a>
             </div>
-            <div class="collab-card recommended">
-                <div class="tier-name">Partner</div>
-                <div class="tier-price">&#8377;499<span class="period">/mo</span></div>
-                <ul class="tier-features">
-                    <li>Early access</li>
-                    <li>Creator features</li>
-                    <li>Priority casting</li>
-                </ul>
-                <button class="btn filled full-width">Get Started</button>
-            </div>
-            <div class="collab-card">
-                <div class="tier-name">Core Collaborator</div>
-                <div class="tier-price">&#8377;1499<span class="period">/mo</span></div>
-                <ul class="tier-features">
-                    <li>Investor updates</li>
-                    <li>Ajinkyan portal access</li>
-                    <li>Invoices</li>
-                </ul>
-                <button class="btn ghost outline full-width">Get Started</button>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 7. CAREERS -->
-    <section class="careers" id="careers">
-        <h2 class="section-heading text-center mb-large">Find Your Role in the Frame</h2>
-        <div class="careers-container grid-2-col">
-            <div class="careers-col">
-                <h3 class="careers-col-title">Technical & Production</h3>
-                <div class="career-card">
-                    <div class="career-info">
-                        <h4>Director of Photography</h4>
-                        <p>Shape the visual language of our next original film.</p>
+        <!-- 5. AJINKYAN SPOTLIGHT -->
+        <section class="ajinkyan" id="ajinkyan" style="padding: 0;">
+            <div class="ajinkyan-bg"></div>
+            <div class="ajinkyan-container">
+                <div class="ajinkyan-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <div class="section-tag">[ ORIGINAL FILM ]</div>
+                    <h2 class="ajinkyan-title">Ajinkyan</h2>
+                    <p class="ajinkyan-desc">
+                        An original film by Flashmeidia &mdash; a story of ambition, identity, and the world behind the lens.
+                    </p>
+                    <div class="ajinkyan-actions" style="justify-content: center;">
+                        <button class="btn filled">Support the Film</button>
+                        <button class="btn ghost outline">Join the Casting</button>
                     </div>
-                    <button class="btn ghost outline small">Apply</button>
-                </div>
-                <div class="career-card">
-                    <div class="career-info">
-                        <h4>Editor</h4>
-                        <p>Piece together narratives with rhythm and emotion.</p>
-                    </div>
-                    <button class="btn ghost outline small">Apply</button>
-                </div>
-                <div class="career-card">
-                    <div class="career-info">
-                        <h4>Sound Designer</h4>
-                        <p>Build immersive sonic landscapes for cinema.</p>
-                    </div>
-                    <button class="btn ghost outline small">Apply</button>
                 </div>
             </div>
-            <div class="careers-col">
-                <h3 class="careers-col-title">Artistic Roles</h3>
-                <div class="career-card">
-                    <div class="career-info">
-                        <h4>Actor</h4>
-                        <p>Bring characters to life on screen.</p>
-                    </div>
-                    <button class="btn ghost outline small">Apply</button>
-                </div>
-                <div class="career-card">
-                    <div class="career-info">
-                        <h4>Dancer</h4>
-                        <p>Express emotion through movement in music videos.</p>
-                    </div>
-                    <button class="btn ghost outline small">Apply</button>
-                </div>
-                <div class="career-card">
-                    <div class="career-info">
-                        <h4>Voice Artist</h4>
-                        <p>Lend your voice to narrations and dubs.</p>
-                    </div>
-                    <button class="btn ghost outline small">Apply</button>
-                </div>
-                <div class="career-card">
-                    <div class="career-info">
-                        <h4>Musician</h4>
-                        <p>Compose and perform original scores.</p>
-                    </div>
-                    <button class="btn ghost outline small">Apply</button>
-                </div>
-                <div class="career-card">
-                    <div class="career-info">
-                        <h4>Writer</h4>
-                        <p>Draft scripts that challenge and inspire.</p>
-                    </div>
-                    <button class="btn ghost outline small">Apply</button>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <!-- 8. FOOTER -->
-    <footer class="footer">
-        <div class="footer-logo">
-            <img src="logo.png" alt="Flashmeidia">
+
+    <!-- Apply for a Role Modal -->
+    <div class="modal-overlay hidden" id="apply-modal">
+        <div class="modal-content apply-modal-content">
+            <button class="modal-close" onclick="closeApplyModal()">&times;</button>
+            <div id="apply-form-container">
+                <h3 class="apply-modal-heading">Apply for a Role</h3>
+                <p class="apply-modal-subtext">Fill in your details and we'll get back to you.</p>
+                
+                <form id="apply-role-form" novalidate>
+                    <div class="form-row grid-2-col-small">
+                        <div class="form-group">
+                            <label for="apply-name">FULL NAME</label>
+                            <input type="text" id="apply-name" name="name" required>
+                            <div class="error-msg"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="apply-age">AGE</label>
+                            <input type="number" id="apply-age" name="age" min="16" max="65" required>
+                            <div class="error-msg"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row grid-2-col-small">
+                        <div class="form-group">
+                            <label for="apply-city">CITY</label>
+                            <input type="text" id="apply-city" name="city" required>
+                            <div class="error-msg"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="apply-state">STATE</label>
+                            <input type="text" id="apply-state" name="state" required>
+                            <div class="error-msg"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="apply-email">EMAIL ADDRESS</label>
+                            <input type="email" id="apply-email" name="email" required>
+                            <div class="error-msg"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="apply-mobile">MOBILE NUMBER</label>
+                            <input type="tel" id="apply-mobile" name="mobile" placeholder="+91 XXXXX XXXXX" required>
+                            <div class="error-msg"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="apply-role">ROLE YOU'RE LOOKING FOR</label>
+                            <select id="apply-role" name="role" required>
+                                <option value="" disabled selected>Select a role...</option>
+                                <option value="Actor">Actor</option>
+                                <option value="Actress">Actress</option>
+                                <option value="Dancer">Dancer</option>
+                                <option value="Voice Artist">Voice Artist</option>
+                                <option value="Musician">Musician</option>
+                                <option value="Writer">Writer</option>
+                                <option value="Director of Photography">Director of Photography</option>
+                                <option value="Editor">Editor</option>
+                                <option value="Sound Designer">Sound Designer</option>
+                                <option value="Production Assistant">Production Assistant</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="error-msg"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="apply-experience">YEARS OF EXPERIENCE</label>
+                            <select id="apply-experience" name="experience">
+                                <option value="" disabled selected>Select experience...</option>
+                                <option value="Fresher (0 years)">Fresher (0 years)</option>
+                                <option value="1-2 years">1-2 years</option>
+                                <option value="3-5 years">3-5 years</option>
+                                <option value="5+ years">5+ years</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="apply-portfolio">PORTFOLIO / INSTAGRAM LINK</label>
+                            <input type="url" id="apply-portfolio" name="portfolio" placeholder="paste your link here">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="apply-message">ANYTHING ELSE YOU WANT US TO KNOW</label>
+                            <textarea id="apply-message" name="message" rows="4"></textarea>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn filled full-width form-submit-btn">Submit Application</button>
+                    <div class="form-general-error hidden" id="apply-form-error">Something went wrong. Please try again.</div>
+                </form>
+            </div>
+            
+            <div id="apply-success-container" class="hidden text-center">
+                <svg class="success-icon" viewBox="0 0 24 24" width="64" height="64" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <h3 class="success-heading">Application Received</h3>
+                <p class="success-subtext">We'll review your profile and reach out soon.</p>
+                <button class="btn ghost outline" onclick="closeApplyModal()">Close</button>
+            </div>
         </div>
-        <div class="footer-nav">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#work">Our Work</a>
-            <a href="#ajinkyan">Ajinkyan</a>
-            <a href="#careers">Careers</a>
-            <a href="#collab">Collab With Us</a>
-        </div>
-        <div class="footer-socials">
-            <a href="#" aria-label="Instagram">Instagram</a>
-            <a href="#" aria-label="YouTube">YouTube</a>
-            <a href="#" aria-label="LinkedIn">LinkedIn</a>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2024 Flashmeidia Film Production. All rights reserved.
-        </div>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
