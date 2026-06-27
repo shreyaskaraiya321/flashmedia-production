@@ -165,11 +165,12 @@ if (applyForm) {
     });
 }
 
-// SPA View Toggle: Home / About / Work
+// SPA View Toggle: Home / About / Work / Contact
 function showAboutView(event) {
     if (event) event.preventDefault();
     document.getElementById('main-content').classList.add('hidden');
     document.getElementById('work-view').classList.add('hidden');
+    document.getElementById('contact-view').classList.add('hidden');
     document.getElementById('about').classList.remove('hidden');
     window.scrollTo(0, 0);
 }
@@ -178,6 +179,7 @@ function showWorkView(event) {
     if (event) event.preventDefault();
     document.getElementById('main-content').classList.add('hidden');
     document.getElementById('about').classList.add('hidden');
+    document.getElementById('contact-view').classList.add('hidden');
     document.getElementById('work-view').classList.remove('hidden');
     window.scrollTo(0, 0);
 }
@@ -186,4 +188,14 @@ function showHomeView() {
     document.getElementById('main-content').classList.remove('hidden');
     document.getElementById('about').classList.add('hidden');
     document.getElementById('work-view').classList.add('hidden');
+    document.getElementById('contact-view').classList.add('hidden');
+}
+
+function showContactView(event) {
+    if (event) event.preventDefault();
+    document.getElementById('main-content').classList.add('hidden');
+    document.getElementById('about').classList.add('hidden');
+    document.getElementById('work-view').classList.add('hidden');
+    document.getElementById('contact-view').classList.remove('hidden');
+    window.scrollTo(0, 0);
 }
