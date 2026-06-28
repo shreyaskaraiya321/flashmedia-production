@@ -23,7 +23,7 @@
                 <a href="#home" onclick="showHomeView()">Home</a>
                 <a href="#about" onclick="showAboutView(event)">About</a>
                 <a href="#work" onclick="showWorkView(event)">Our Work</a>
-                <a href="#work" onclick="showWorkView(event)">Ajinkyan</a>
+                <a href="#ajinkyan" onclick="showAjinkyanView(event)">Ajinkyan</a>
                 <a href="#contact" onclick="showContactView(event)">Contact</a>
             </div>
             <div class="nav-actions">
@@ -143,7 +143,7 @@
             <a href="#home" onclick="showHomeView()">Home</a>
             <a href="#about" onclick="showAboutView(event)">About</a>
             <a href="#work" onclick="showWorkView(event)">Our Work</a>
-            <a href="#work" onclick="showWorkView(event)">Ajinkyan</a>
+            <a href="#ajinkyan" onclick="showAjinkyanView(event)">Ajinkyan</a>
             <a href="#contact" onclick="showContactView(event)">Contact Us</a>
         </div>
         <div class="footer-socials">
@@ -205,28 +205,91 @@
                     </div>
 
                 </div>
-                <a href="#" class="production-link">Watch on Instagram &nearr;</a>
             </div>
         </section>
 
-        <!-- 5. AJINKYAN SPOTLIGHT -->
-        <section class="ajinkyan" id="ajinkyan" style="padding: 0;">
-            <div class="ajinkyan-bg"></div>
-            <div class="ajinkyan-container">
-                <div class="ajinkyan-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
-                    <div class="section-tag">[ ORIGINAL FILM ]</div>
-                    <h2 class="ajinkyan-title">Ajinkyan</h2>
-                    <p class="ajinkyan-desc">
-                        An original film by Flashmeidia &mdash; a story of ambition, identity, and the world behind the lens.
-                    </p>
-                    <div class="ajinkyan-actions" style="justify-content: center;">
-                        <button class="btn filled">Support the Film</button>
-                        <button class="btn ghost outline">Join the Casting</button>
-                    </div>
+    </div>
+
+    <!-- Ajinkyan Dedicated View -->
+    <div id="ajinkyan-view" class="hidden ajinkyan-page">
+        <!-- HERO TREATMENT -->
+        <div class="ajinkyan-hero">
+            <div class="ajinkyan-hero-tag">[ FLASHMEIDIA ORIGINAL ]</div>
+            <h1 class="ajinkyan-hero-title">Ajinkyan</h1>
+            <p class="ajinkyan-hero-tagline">Not just a film. An emotion.</p>
+            <div class="ajinkyan-hero-divider"></div>
+        </div>
+
+        <!-- TEASER SECTION -->
+        <div class="ajinkyan-teaser-section">
+            <div class="ajinkyan-teaser-container">
+                <div class="ajinkyan-teaser-label">[ OFFICIAL TEASER ]</div>
+                <video 
+                    src="assets/ajinkyan-teaser.mp4" 
+                    controls 
+                    playsinline 
+                    preload="metadata"
+                    class="ajinkyan-teaser-video">
+                </video>
+                <div class="ajinkyan-teaser-link-wrap">
+                    <a href="https://www.instagram.com/reel/DZsAuJhziv8/" target="_blank" class="contact-link ajinkyan-teaser-link">View on Instagram ↗</a>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- BTS CAROUSEL -->
+        <div class="ajinkyan-bts-section">
+            <div class="bts-label">[ BEHIND THE SCENES ]</div>
+            <div class="bts-carousel-container">
+                <div class="bts-carousel-slides">
+                    <img src="bts1.jpg" alt="BTS 1" class="bts-carousel-slide active">
+                    <img src="bts2.jpg" alt="BTS 2" class="bts-carousel-slide">
+                    <img src="bts3.jpg" alt="BTS 3" class="bts-carousel-slide">
+                    <img src="bts4.jpg" alt="BTS 4" class="bts-carousel-slide">
+                    <img src="bts5.jpg" alt="BTS 5" class="bts-carousel-slide">
+                </div>
+                <button class="bts-carousel-btn prev" onclick="moveBtsCarousel(-1)">‹</button>
+                <button class="bts-carousel-btn next" onclick="moveBtsCarousel(1)">›</button>
+                <div class="bts-carousel-dots">
+                    <div class="bts-dot active" onclick="setBtsCarousel(0)"></div>
+                    <div class="bts-dot" onclick="setBtsCarousel(1)"></div>
+                    <div class="bts-dot" onclick="setBtsCarousel(2)"></div>
+                    <div class="bts-dot" onclick="setBtsCarousel(3)"></div>
+                    <div class="bts-dot" onclick="setBtsCarousel(4)"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FILM DETAILS STRIP -->
+        <div class="ajinkyan-details-strip">
+            <div class="details-item">
+                <div class="details-item-label">[ GENRE ]</div>
+                <div class="details-item-value">Drama · Social</div>
+            </div>
+            <div class="details-item">
+                <div class="details-item-label">[ LANGUAGE ]</div>
+                <div class="details-item-value">Marathi · Hindi</div>
+            </div>
+            <div class="details-item">
+                <div class="details-item-label">[ PRODUCTION ]</div>
+                <div class="details-item-value">Flashmeidia Film Production</div>
+            </div>
+            <div class="details-item">
+                <div class="details-item-label">[ STATUS ]</div>
+                <div class="details-item-value">In Production</div>
+            </div>
+            <div class="details-item">
+                <div class="details-item-label">[ RELEASING ]</div>
+                <div class="details-item-value">To Be Decided</div>
+            </div>
+        </div>
+
+        <!-- BOTTOM CTA -->
+        <div class="ajinkyan-bottom-cta">
+            <a href="https://www.instagram.com/flashmedia.production/" target="_blank" rel="noopener noreferrer" class="btn filled ajinkyan-instagram-btn">View Latest Updates on Instagram</a>
+        </div>
     </div>
+
 
     <!-- Contact View Wrapper -->
     <div id="contact-view" class="hidden contact-page">

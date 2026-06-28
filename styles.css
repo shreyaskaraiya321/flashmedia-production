@@ -1719,3 +1719,253 @@ body.modal-open {
         grid-template-columns: 1fr;
     }
 }
+
+/* ========================================= */
+/*             AJINKYAN VIEW STYLES          */
+/* ========================================= */
+
+.ajinkyan-page {
+    background-color: #1C1C1E;
+    min-height: 100vh;
+}
+
+.ajinkyan-hero {
+    background: #1A1014;
+    text-align: center;
+    padding: 120px 20px 60px;
+}
+
+.ajinkyan-hero-tag {
+    font-family: var(--font-mono), monospace;
+    color: #C4916A;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+}
+
+.ajinkyan-hero-title {
+    font-family: var(--font-heading), serif;
+    font-size: 96px;
+    font-style: italic;
+    color: #C4916A;
+    margin: 16px 0;
+    font-weight: 400;
+}
+
+.ajinkyan-hero-tagline {
+    font-family: var(--font-body), sans-serif;
+    color: #7A7575;
+    font-style: italic;
+    font-size: 20px;
+    margin: 0 0 40px;
+}
+
+.ajinkyan-hero-divider {
+    height: 1px;
+    background: #C4916A;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ajinkyan-teaser-section {
+    background: #1A1014;
+    padding: 60px 20px 80px;
+    text-align: center;
+}
+
+.ajinkyan-teaser-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.ajinkyan-teaser-label {
+    font-family: var(--font-mono), monospace;
+    color: #7A7575;
+    font-size: 14px;
+    margin-bottom: 24px;
+    letter-spacing: 0.1em;
+}
+
+.ajinkyan-teaser-video {
+    width: 100%;
+    border-radius: 6px;
+    background: #000;
+    display: block;
+}
+
+.ajinkyan-teaser-link-wrap {
+    margin-top: 24px;
+}
+
+.ajinkyan-teaser-link {
+    font-family: var(--font-body), sans-serif;
+    font-size: 16px;
+}
+
+.ajinkyan-bts-section {
+    padding: 80px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.bts-label {
+    font-family: var(--font-mono), monospace;
+    text-align: center;
+    color: #7A7575;
+    font-size: 14px;
+    margin-bottom: 40px;
+    letter-spacing: 0.1em;
+}
+
+.bts-carousel-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #000;
+}
+
+.bts-carousel-slides {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9; /* Standard aspect ratio, adjusts to images */
+}
+
+.bts-carousel-slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: contain; /* Do not stretch, show full image */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.bts-carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.bts-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #FFF;
+    border: none;
+    font-size: 32px;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.bts-carousel-btn:hover {
+    color: #C4916A;
+    background: rgba(0,0,0,0.8);
+}
+
+.bts-carousel-btn.prev {
+    left: 20px;
+}
+
+.bts-carousel-btn.next {
+    right: 20px;
+}
+
+.bts-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+.bts-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #333;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.bts-dot.active {
+    background: #C4916A;
+}
+
+.ajinkyan-details-strip {
+    background: #2A2828;
+    padding: 32px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.details-item-label {
+    font-family: var(--font-mono), monospace;
+    font-size: 10px;
+    color: #7A7575;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.details-item-value {
+    font-family: var(--font-body), sans-serif;
+    font-size: 16px;
+    color: #FFF;
+}
+
+.ajinkyan-bottom-cta {
+    text-align: center;
+    margin-top: 64px;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.ajinkyan-instagram-btn {
+    background-color: #C4916A;
+    color: #1C1C1E;
+    font-family: var(--font-body), sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 16px 48px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.ajinkyan-instagram-btn:hover {
+    background-color: #FFF;
+}
+
+@media (max-width: 768px) {
+    .ajinkyan-hero-title {
+        font-size: 64px;
+    }
+    
+    .bts-carousel-slides {
+        aspect-ratio: 4/3;
+    }
+    
+    .ajinkyan-details-strip {
+        flex-direction: column;
+        text-align: center;
+    }
+}
