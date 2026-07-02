@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashmeidia Film Production</title>
-    <meta name="description" content="Flashmeidia Film Production brings stories to life through cinematic vision, artistic integrity, and bold creative direction.">
-    
+    <meta name="description"
+        content="Flashmeidia Film Production brings stories to life through cinematic vision, artistic integrity, and bold creative direction.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- 1. NAVBAR -->
     <nav class="navbar" id="navbar">
@@ -27,35 +32,41 @@
                 <a href="#contact" onclick="showContactView(event)">Contact</a>
             </div>
             <div class="nav-actions">
-                <button class="btn ghost outline nav-contact-btn" onclick="openApplyModal()" style="border: 1px solid #C4916A; color: #C4916A; background: transparent; padding: 10px 24px; border-radius: 6px; font-family: var(--font-body); font-weight: 500; font-size: 14px;">Contact for a Role</button>
+                <button class="btn ghost outline nav-contact-btn" onclick="openApplyModal()"
+                    style="border: 1px solid #C4916A; color: #C4916A; background: transparent; padding: 10px 24px; border-radius: 6px; font-family: var(--font-body); font-weight: 500; font-size: 14px;">Contact
+                    for a Role</button>
             </div>
         </div>
     </nav>
-    
+
     <!-- Main Content Wrapper -->
     <div id="main-content">
         <!-- 2. HERO SECTION -->
         <section class="hero" id="home">
             <div class="hero-noise"></div>
             <div class="hero-content" style="padding-top: 160px;">
-                <img src="assets/Screenshot 2026-06-27 201140.webp" alt="Flashmeidia Logo" style="width: 72px; height: auto; margin-bottom: 32px; display: block; margin-left: auto; margin-right: auto; border-radius: 4px;">
+                <img src="assets/Screenshot 2026-06-27 201140.webp" alt="Flashmeidia Logo"
+                    style="width: 72px; height: auto; margin-bottom: 32px; display: block; margin-left: auto; margin-right: auto; border-radius: 4px;">
                 <div class="hero-tag">[ EST. 2024 &middot; FILM PRODUCTION ]</div>
                 <h1 class="hero-heading">We Frame<br>the Extraordinary.</h1>
                 <p class="hero-subtext">
-                    Flashmeidia Film Production brings stories to life through cinematic vision, <br class="desktop-only">artistic integrity, and bold creative direction.
+                    Flashmeidia Film Production brings stories to life through cinematic vision, <br
+                        class="desktop-only">artistic integrity, and bold creative direction.
                 </p>
                 <div class="hero-ctas">
                     <button class="btn filled">Explore Our Work</button>
                     <button class="btn ghost outline" onclick="openApplyModal()">Contact for a Role</button>
                 </div>
             </div>
-            
+
             <div class="hero-marquee-wrapper">
                 <div class="hero-divider"></div>
                 <div class="hero-marquee">
                     <div class="marquee-content">
-                        FILM PRODUCTION &middot; CASTING &middot; CONTENT CREATION &middot; ORIGINAL FILM &middot; CREATIVE CAREERS &middot; COLLAB WITH US &middot; 
-                        FILM PRODUCTION &middot; CASTING &middot; CONTENT CREATION &middot; ORIGINAL FILM &middot; CREATIVE CAREERS &middot; COLLAB WITH US &middot; 
+                        FILM PRODUCTION &middot; CASTING &middot; CONTENT CREATION &middot; ORIGINAL FILM &middot;
+                        CREATIVE CAREERS &middot; COLLAB WITH US &middot;
+                        FILM PRODUCTION &middot; CASTING &middot; CONTENT CREATION &middot; ORIGINAL FILM &middot;
+                        CREATIVE CAREERS &middot; COLLAB WITH US &middot;
                     </div>
                 </div>
                 <div class="hero-image-marquee">
@@ -113,38 +124,42 @@
         </section>
 
 
-    <!-- 7. CAREERS -->
-    <section class="careers" id="careers">
-        <h2 class="section-heading text-center mb-large">Find Your Role in the Frame</h2>
-        <div class="careers-subtext text-center" style="font-family: var(--font-body); color: #7A7575; font-size: 18px; margin-bottom: 2rem;">
-            Whether you're in front of the camera or behind it &mdash; there's a place for you here.
-        </div>
-        <div class="text-center">
-            <button class="btn ghost outline contact-role-btn" onclick="openApplyModal()">Contact for a Role</button>
-        </div>
-    </section>
+        <!-- 7. CAREERS -->
+        <section class="careers" id="careers">
+            <h2 class="section-heading text-center mb-large">Find Your Role in the Frame</h2>
+            <div class="careers-subtext text-center"
+                style="font-family: var(--font-body); color: #7A7575; font-size: 18px; margin-bottom: 2rem;">
+                Whether you're in front of the camera or behind it &mdash; there's a place for you here.
+            </div>
+            <div class="text-center">
+                <button class="btn ghost outline contact-role-btn" onclick="openApplyModal()">Contact for a
+                    Role</button>
+            </div>
+        </section>
 
 
-    <!-- 8. FOOTER -->
-    <footer class="footer">
-        <div class="footer-logo">
-            <img src="assets/Screenshot 2026-06-27 201140.webp" alt="Flashmeidia">
-        </div>
-        <div class="footer-nav">
-            <a href="#home" onclick="showHomeView()">Home</a>
-            <a href="#about" onclick="showAboutView(event)">About</a>
-            <a href="#work" onclick="showWorkView(event)">Our Work</a>
-            <a href="#ajinkyan" onclick="showAjinkyanView(event)">Ajinkyan</a>
-            <a href="#contact" onclick="showContactView(event)">Contact Us</a>
-        </div>
-        <div class="footer-socials">
-            <a href="https://www.instagram.com/flashmedia.production/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://www.linkedin.com/in/shubham-kudre-6572a936b/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2024 Flashmeidia Film Production. All rights reserved.
-        </div>
-    </footer>
+        <!-- 8. FOOTER -->
+        <footer class="footer">
+            <div class="footer-logo">
+                <img src="assets/Screenshot 2026-06-27 201140.webp" alt="Flashmeidia">
+            </div>
+            <div class="footer-nav">
+                <a href="#home" onclick="showHomeView()">Home</a>
+                <a href="#about" onclick="showAboutView(event)">About</a>
+                <a href="#work" onclick="showWorkView(event)">Our Work</a>
+                <a href="#ajinkyan" onclick="showAjinkyanView(event)">Ajinkyan</a>
+                <a href="#contact" onclick="showContactView(event)">Contact Us</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/flashmedia.production/" aria-label="Instagram" target="_blank"
+                    rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/in/shubham-kudre-6572a936b/" aria-label="LinkedIn" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Flashmeidia Film Production. All rights reserved.
+            </div>
+        </footer>
     </div> <!-- End #main-content -->
 
     <!-- 3. ABOUT / PROFILE SECTION -->
@@ -154,7 +169,9 @@
                 <div class="section-tag">[ WHO WE ARE ]</div>
                 <h2 class="section-heading">A Production House Built on Craft.</h2>
                 <p class="section-body">
-                    Flashmeidia Film Production is an independent creative studio dedicated to cinematic storytelling, talent discovery, and film culture. From original films to branded content, we operate at the intersection of art and execution.
+                    Flashmeidia Film Production is an independent creative studio dedicated to cinematic storytelling,
+                    talent discovery, and film culture. From original films to branded content, we operate at the
+                    intersection of art and execution.
                 </p>
                 <div class="about-stats">
                     <span class="stat-pill">12+ Projects</span>
@@ -163,7 +180,8 @@
                 </div>
             </div>
             <div class="about-image">
-                <img src="assets/poster.jpg" alt="A film Written and Directed by Shubham Kudre" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block;">
+                <img src="assets/poster.jpg" alt="A film Written and Directed by Shubham Kudre"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block;">
             </div>
         </div>
     </section>
@@ -178,20 +196,20 @@
                 <h3 class="production-title">Ajinkyan</h3>
                 <div class="production-genre">[ DRAMA &middot; SOCIAL ]</div>
                 <p class="production-story">
-                    Ajinkyan is a deeply human story set against the backdrop of a school, tracing the life of a soldier &mdash; his sacrifices, his identity, and the world he leaves behind. A story about what it means to serve and to belong.
+                    Ajinkyan is a deeply human story set against the backdrop of a school, tracing the life of a soldier
+                    &mdash; his sacrifices, his identity, and the world he leaves behind. A story about what it means to
+                    serve and to belong.
                 </p>
                 <div class="production-media">
                     <div class="media-box-wrapper">
-                        <div class="timer-label text-center mb-small" style="color: var(--accent); margin-bottom: 0.5rem;">TEASER</div>
-                        <video 
-                          src="assets/ajinkyan-teaser.mp4" 
-                          controls 
-                          playsinline 
-                          preload="metadata"
-                          style="width:100%; border-radius:6px; background:#1C1C1E; display:block;">
+                        <div class="timer-label text-center mb-small"
+                            style="color: var(--accent); margin-bottom: 0.5rem;">TEASER</div>
+                        <video src="assets/ajinkyan-teaser.mp4" controls playsinline preload="metadata"
+                            style="width:100%; border-radius:6px; background:#1C1C1E; display:block;">
                         </video>
                         <div style="text-align: center; margin-top: 12px;">
-                            <a href="https://www.instagram.com/reel/DZsAuJhziv8/" target="_blank" class="instagram-reel-link">View on Instagram ↗</a>
+                            <a href="https://www.instagram.com/reel/DZsAuJhziv8/" target="_blank"
+                                class="instagram-reel-link">View on Instagram ↗</a>
                         </div>
                     </div>
 
@@ -215,15 +233,12 @@
         <div class="ajinkyan-teaser-section">
             <div class="ajinkyan-teaser-container">
                 <div class="ajinkyan-teaser-label">[ OFFICIAL TEASER ]</div>
-                <video 
-                    src="assets/ajinkyan-teaser.mp4" 
-                    controls 
-                    playsinline 
-                    preload="metadata"
+                <video src="assets/ajinkyan-teaser.mp4" controls playsinline preload="metadata"
                     class="ajinkyan-teaser-video">
                 </video>
                 <div class="ajinkyan-teaser-link-wrap">
-                    <a href="https://www.instagram.com/reel/DZsAuJhziv8/" target="_blank" class="contact-link ajinkyan-teaser-link">View on Instagram ↗</a>
+                    <a href="https://www.instagram.com/reel/DZsAuJhziv8/" target="_blank"
+                        class="contact-link ajinkyan-teaser-link">View on Instagram ↗</a>
                 </div>
             </div>
         </div>
@@ -277,7 +292,8 @@
 
         <!-- BOTTOM CTA -->
         <div class="ajinkyan-bottom-cta">
-            <a href="https://www.instagram.com/flashmedia.production/" target="_blank" rel="noopener noreferrer" class="btn filled ajinkyan-instagram-btn">View Latest Updates on Instagram</a>
+            <a href="https://www.instagram.com/flashmedia.production/" target="_blank" rel="noopener noreferrer"
+                class="btn filled ajinkyan-instagram-btn">View Latest Updates on Instagram</a>
         </div>
     </div>
 
@@ -298,9 +314,13 @@
                 <h3 class="founder-name">Shubham Kudre</h3>
                 <div class="founder-divider"></div>
                 <div class="contact-details">
-                    <div class="detail-item"><span class="detail-dot">·</span> <a href="mailto:flashmedia824@gmail.com" class="contact-link">flashmedia824@gmail.com</a></div>
-                    <div class="detail-item"><span class="detail-dot">·</span> <a href="tel:+919689036533" class="contact-link">+91 9689036533</a></div>
-                    <div class="detail-item"><span class="detail-dot">·</span> <a href="https://www.linkedin.com/in/shubham-kudre-6572a936b/" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn ↗</a></div>
+                    <div class="detail-item"><span class="detail-dot">·</span> <a href="mailto:flashmedia824@gmail.com"
+                            class="contact-link">flashmedia824@gmail.com</a></div>
+                    <div class="detail-item"><span class="detail-dot">·</span> <a href="tel:+919689036533"
+                            class="contact-link">+91 9689036533</a></div>
+                    <div class="detail-item"><span class="detail-dot">·</span> <a
+                            href="https://www.linkedin.com/in/shubham-kudre-6572a936b/" target="_blank"
+                            rel="noopener noreferrer" class="contact-link">LinkedIn ↗</a></div>
                 </div>
             </div>
             <div class="card-right">
@@ -321,18 +341,30 @@
                 <p class="studio-subtext">Expanding our reach into the heart of Indian cinema.</p>
             </div>
         </div>
-        
+
         <div class="contact-footer-text">
             FLASHMEIDIA FILM PRODUCTION · EST. 2025
         </div>
 
         <!-- SECTION 4 — SOCIAL LINKS -->
         <div class="contact-socials">
-            <a href="https://www.instagram.com/flashmedia.production/" target="_blank" rel="noopener noreferrer" class="social-icon-link">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            <a href="https://www.instagram.com/flashmedia.production/" target="_blank" rel="noopener noreferrer"
+                class="social-icon-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
             </a>
-            <a href="https://www.linkedin.com/in/shubham-kudre-6572a936b/" target="_blank" rel="noopener noreferrer" class="social-icon-link">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <a href="https://www.linkedin.com/in/shubham-kudre-6572a936b/" target="_blank" rel="noopener noreferrer"
+                class="social-icon-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
             </a>
         </div>
     </div>
@@ -345,7 +377,7 @@
             <div id="apply-form-container">
                 <h3 class="apply-modal-heading">Apply for a Role</h3>
                 <p class="apply-modal-subtext">Fill in your details and we'll get back to you.</p>
-                
+
                 <form id="apply-role-form" novalidate>
                     <div class="form-row grid-2-col-small">
                         <div class="form-group">
@@ -359,7 +391,7 @@
                             <div class="error-msg"></div>
                         </div>
                     </div>
-                    
+
                     <div class="form-row grid-2-col-small">
                         <div class="form-group">
                             <label for="apply-city">CITY</label>
@@ -372,7 +404,7 @@
                             <div class="error-msg"></div>
                         </div>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="apply-email">EMAIL ADDRESS</label>
@@ -380,7 +412,7 @@
                             <div class="error-msg"></div>
                         </div>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="apply-mobile">MOBILE NUMBER</label>
@@ -388,7 +420,7 @@
                             <div class="error-msg"></div>
                         </div>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="apply-role">ROLE YOU'RE LOOKING FOR</label>
@@ -409,7 +441,7 @@
                             <div class="error-msg"></div>
                         </div>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="apply-experience">YEARS OF EXPERIENCE</label>
@@ -422,28 +454,30 @@
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="apply-portfolio">PORTFOLIO / INSTAGRAM LINK</label>
                             <input type="url" id="apply-portfolio" name="portfolio" placeholder="paste your link here">
                         </div>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="apply-message">ANYTHING ELSE YOU WANT US TO KNOW</label>
                             <textarea id="apply-message" name="message" rows="4"></textarea>
                         </div>
                     </div>
-                    
+
                     <button type="submit" class="btn filled full-width form-submit-btn">Submit Application</button>
-                    <div class="form-general-error hidden" id="apply-form-error">Something went wrong. Please try again.</div>
+                    <div class="form-general-error hidden" id="apply-form-error">Something went wrong. Please try again.
+                    </div>
                 </form>
             </div>
-            
+
             <div id="apply-success-container" class="hidden text-center">
-                <svg class="success-icon" viewBox="0 0 24 24" width="64" height="64" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="success-icon" viewBox="0 0 24 24" width="64" height="64" stroke="var(--accent)"
+                    stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
                 <h3 class="success-heading">Application Received</h3>
@@ -455,4 +489,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
