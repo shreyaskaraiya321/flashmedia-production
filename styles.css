@@ -337,9 +337,6 @@ section {
 
 .hero-marquee-wrapper {
     width: 100vw;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     overflow: hidden;
     margin: 0;
     padding: 0;
