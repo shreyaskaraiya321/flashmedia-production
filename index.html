@@ -190,29 +190,45 @@
     <div id="work-view" class="hidden" style="max-width: 1100px; margin: 0 auto; padding: 100px 40px;">
         <!-- CURRENT PROJECT DISPLAY SECTION -->
         <section class="current-production" id="production" style="padding: 0; margin-bottom: 80px;">
-            <div class="section-tag">[ NOW FILMING ]</div>
-            <h2 class="section-heading">Inside the Frame</h2>
+            <div class="section-tag" id="pub-section-tag">[ NOW FILMING ]</div>
+            <h2 class="section-heading" id="pub-section-heading">Inside the Frame</h2>
+
+            <!-- ANNOUNCEMENT BANNER -->
+            <div id="pub-announcement-banner"
+                style="display: none; background: #C4916A; color: #1C1C1E; padding: 12px; border-radius: 4px; text-align: center; margin-bottom: 24px; font-weight: 600;">
+            </div>
+
             <div class="production-card">
-                <h3 class="production-title">Ajinkyan</h3>
-                <div class="production-genre">[ DRAMA &middot; SOCIAL ]</div>
-                <p class="production-story">
+                <!-- PROJECT POSTER -->
+                <img id="pub-poster-img" src=""
+                    style="display: none; width: 100%; border-radius: 8px; margin-bottom: 24px; object-fit: cover;">
+
+                <h3 class="production-title" id="pub-project-name">Ajinkyan</h3>
+                <div class="production-genre" id="pub-genre-tags">[ DRAMA &middot; SOCIAL ]</div>
+                <p class="production-story" id="pub-story">
                     Ajinkyan is a deeply human story set against the backdrop of a school, tracing the life of a soldier
                     &mdash; his sacrifices, his identity, and the world he leaves behind. A story about what it means to
                     serve and to belong.
                 </p>
+
+                <!-- DIRECTOR'S NOTE -->
+                <div id="pub-director-note-container"
+                    style="display: none; margin-top: 24px; margin-bottom: 24px; padding: 16px; border-left: 2px solid #C4916A; font-style: italic; color: var(--text-muted);">
+                </div>
+
                 <div class="production-media">
                     <div class="media-box-wrapper">
                         <div class="timer-label text-center mb-small"
                             style="color: var(--accent); margin-bottom: 0.5rem;">TEASER</div>
-                        <video src="assets/ajinkyan-teaser.mp4" controls playsinline preload="metadata"
+                        <video id="pub-teaser-video" src="assets/ajinkyan-teaser.mp4" controls playsinline
+                            preload="metadata"
                             style="width:100%; border-radius:6px; background:#1C1C1E; display:block;">
                         </video>
                         <div style="text-align: center; margin-top: 12px;">
-                            <a href="https://www.instagram.com/reel/DZsAuJhziv8/" target="_blank"
+                            <a id="pub-teaser-link" href="https://www.instagram.com/reel/DZsAuJhziv8/" target="_blank"
                                 class="instagram-reel-link">View on Instagram ↗</a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -223,9 +239,9 @@
     <div id="ajinkyan-view" class="hidden ajinkyan-page">
         <!-- HERO TREATMENT -->
         <div class="ajinkyan-hero">
-            <div class="ajinkyan-hero-tag">[ FLASHMEIDIA ORIGINAL ]</div>
-            <h1 class="ajinkyan-hero-title">Ajinkyan</h1>
-            <p class="ajinkyan-hero-tagline">Not just a film. An emotion.</p>
+            <div class="ajinkyan-hero-tag" id="aj-hero-tag">[ FLASHMEIDIA ORIGINAL ]</div>
+            <h1 class="ajinkyan-hero-title" id="aj-hero-title">Ajinkyan</h1>
+            <p class="ajinkyan-hero-tagline" id="aj-hero-tagline">Not just a film. An emotion.</p>
             <div class="ajinkyan-hero-divider"></div>
         </div>
 
@@ -233,21 +249,125 @@
         <div class="ajinkyan-teaser-section">
             <div class="ajinkyan-teaser-container">
                 <div class="ajinkyan-teaser-label">[ OFFICIAL TEASER ]</div>
-                <video src="assets/ajinkyan-teaser.mp4" controls playsinline preload="metadata"
+                <video id="aj-teaser-video" src="assets/ajinkyan-teaser.mp4" controls playsinline preload="metadata"
                     class="ajinkyan-teaser-video">
                 </video>
                 <div class="ajinkyan-teaser-link-wrap">
-                    <a href="https://www.instagram.com/reel/DZsAuJhziv8/" target="_blank"
+                    <a id="aj-teaser-link" href="https://www.instagram.com/reel/DZsAuJhziv8/" target="_blank"
                         class="contact-link ajinkyan-teaser-link">View on Instagram ↗</a>
                 </div>
             </div>
+        </div>
+        <!-- SYNOPSIS SECTION -->
+        <div class="ajinkyan-synopsis-section">
+            <div class="synopsis-label">[ SYNOPSIS ]</div>
+            <h2 class="synopsis-heading">The Story</h2>
+            <div class="synopsis-divider"></div>
+
+            <div class="synopsis-body">
+                <p>Ajinkyan follows the journey of Ajinkya, a young cadet at Ajinkyadwar Sainik School, Satara — a
+                    prestigious military residential school nestled in Maharashtra. Bright, passionate, and full of
+                    dreams, Ajinkya enlists with hopes of becoming a decorated soldier and making his family proud.</p>
+                <p>But life inside the school is far from what he imagined. Beneath the discipline and camaraderie lies
+                    a world of complex hierarchies, unspoken rules, and emotional battles. As Ajinkya navigates
+                    friendships, rivalries, and the weight of expectation, he begins to question what it truly means to
+                    serve — not just a nation, but oneself.</p>
+                <p>Ajinkyan is a deeply emotional coming-of-age story that explores identity, sacrifice, belonging, and
+                    the invisible wars fought within — long before any battlefield is ever reached.</p>
+            </div>
+
+            <div class="synopsis-quote">
+                <div class="synopsis-quote-inner">
+                    <p class="synopsis-quote-text">"Some legacies aren't inherited. They're lived."</p>
+                </div>
+                <div class="synopsis-quote-author">— Ajinkyan, 2027</div>
+            </div>
+        </div>
+
+        <!-- CAST & CHARACTERS SECTION -->
+        <div class="ajinkyan-cast-section">
+            <div class="cast-label">[ CAST & CHARACTERS ]</div>
+            <h2 class="cast-heading">The People of the Story</h2>
+            <div class="cast-divider"></div>
+
+            <!-- SECTION 1: PRINCIPAL CHARACTERS -->
+            <div class="cast-subheading">[ PRINCIPAL CHARACTERS ]</div>
+            
+            <div class="character-grid">
+                <!-- CARD 1 -->
+                <div class="character-card">
+                    <h3 class="character-name">Shivam Deshpande</h3>
+                    <div class="character-role">[ LEAD &middot; PROTAGONIST ]</div>
+                    <p class="character-desc">The Determined Cadet. Quiet, disciplined, and driven by an unwavering dream. His journey from a lost 11-year-old to an Army officer forms the soul of the story.</p>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="character-card">
+                    <h3 class="character-name">Preeti Rathod</h3>
+                    <div class="character-role">[ LEAD &middot; FEMALE ROLE ]</div>
+                    <p class="character-desc">The Quiet Strength. Confident and compassionate. A steady presence whose love and understanding become Shivam's greatest support. Daughter of the school principal.</p>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="character-card">
+                    <h3 class="character-name">Omkar Patil</h3>
+                    <div class="character-role">[ SUPPORTING &middot; FRIEND ]</div>
+                    <p class="character-desc">The Loyal Brother. A scholarship student and farmer's son whose humor, resilience, and unconditional friendship keep the group together.</p>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="character-card">
+                    <h3 class="character-name">Aditya Kulkarni</h3>
+                    <div class="character-role">[ SUPPORTING &middot; FRIEND ]</div>
+                    <p class="character-desc">The Voice of Reason. Calm, mature, and thoughtful. The friend everyone turns to when emotions run high and decisions matter.</p>
+                </div>
+
+                <!-- CARD 5 -->
+                <div class="character-card">
+                    <h3 class="character-name">Col. S. K. Rathod</h3>
+                    <div class="character-role">[ SUPPORTING &middot; AUTHORITY ]</div>
+                    <p class="character-desc">Principal of Sainik School Satara and Preeti's father. Strict and disciplined &mdash; a commanding presence who shapes the cadets through both fear and respect.</p>
+                </div>
+            </div>
+
+            <!-- SECTION 2: CAST -->
+            <div class="cast-subheading cast-margin-top">[ CAST ]</div>
+            
+            <div class="cast-rows">
+                <div class="cast-row">
+                    <div class="actor-name">Lucky Yadav</div>
+                    <div class="actor-role">[ OMKAR ROLE ]</div>
+                </div>
+                <div class="cast-row">
+                    <div class="actor-name tba">To Be Announced <span class="casting-tag">[ CASTING OPEN ]</span></div>
+                    <div class="actor-role">[ ADITYA ROLE ]</div>
+                </div>
+                <div class="cast-row">
+                    <div class="actor-name tba">To Be Announced <span class="casting-tag">[ CASTING OPEN ]</span></div>
+                    <div class="actor-role">[ ACTRESS &middot; FEMALE LEAD ]</div>
+                </div>
+                <div class="cast-row">
+                    <div class="actor-name tba">To Be Announced <span class="casting-tag">[ CASTING OPEN ]</span></div>
+                    <div class="actor-role">[ FATHER'S ROLE ]</div>
+                </div>
+                <div class="cast-row">
+                    <div class="actor-name tba">To Be Announced <span class="casting-tag">[ CASTING OPEN ]</span></div>
+                    <div class="actor-role">[ MOTHER'S ROLE ]</div>
+                </div>
+                <div class="cast-row">
+                    <div class="actor-name">Mr. Sayaji Shinde</div>
+                    <div class="actor-role">[ TEACHER'S ROLE ]</div>
+                </div>
+            </div>
+
+            <div class="cast-footer-note">[ FULL CAST TO BE ANNOUNCED &middot; CASTING IN PROGRESS ]</div>
         </div>
 
         <!-- BTS CAROUSEL -->
         <div class="ajinkyan-bts-section">
             <div class="bts-label">[ BEHIND THE SCENES ]</div>
             <div class="bts-carousel-container">
-                <div class="bts-carousel-slides">
+                <div class="bts-carousel-slides" id="aj-bts-slides">
                     <img src="bts1.jpg" alt="BTS 1" class="bts-carousel-slide active">
                     <img src="bts2.jpg" alt="BTS 2" class="bts-carousel-slide">
                     <img src="bts3.jpg" alt="BTS 3" class="bts-carousel-slide">
@@ -256,7 +376,7 @@
                 </div>
                 <button class="bts-carousel-btn prev" onclick="moveBtsCarousel(-1)">‹</button>
                 <button class="bts-carousel-btn next" onclick="moveBtsCarousel(1)">›</button>
-                <div class="bts-carousel-dots">
+                <div class="bts-carousel-dots" id="aj-bts-dots">
                     <div class="bts-dot active" onclick="setBtsCarousel(0)"></div>
                     <div class="bts-dot" onclick="setBtsCarousel(1)"></div>
                     <div class="bts-dot" onclick="setBtsCarousel(2)"></div>
@@ -270,11 +390,11 @@
         <div class="ajinkyan-details-strip">
             <div class="details-item">
                 <div class="details-item-label">[ GENRE ]</div>
-                <div class="details-item-value">Drama · Social</div>
+                <div class="details-item-value" id="aj-genre">Drama · Social</div>
             </div>
             <div class="details-item">
                 <div class="details-item-label">[ LANGUAGE ]</div>
-                <div class="details-item-value">Marathi · Hindi</div>
+                <div class="details-item-value" id="aj-language">Marathi · Hindi</div>
             </div>
             <div class="details-item">
                 <div class="details-item-label">[ PRODUCTION ]</div>
@@ -282,11 +402,11 @@
             </div>
             <div class="details-item">
                 <div class="details-item-label">[ STATUS ]</div>
-                <div class="details-item-value">In Production</div>
+                <div class="details-item-value" id="aj-status">In Production</div>
             </div>
             <div class="details-item">
                 <div class="details-item-label">[ RELEASING ]</div>
-                <div class="details-item-value">To Be Decided</div>
+                <div class="details-item-value" id="aj-releasing">To Be Decided</div>
             </div>
         </div>
 
@@ -488,6 +608,158 @@
     </div>
 
     <script src="script.js"></script>
+
+    <!-- ADMIN PORTAL SYNC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                const stored = localStorage.getItem('fm_project_data');
+                if (!stored) return; // No admin data, fallback to hardcoded defaults
+
+                const data = JSON.parse(stored);
+
+                // Hydrate Work View (Inside the Frame)
+                if (data.sectionHeading !== undefined) {
+                    const el = document.getElementById('pub-section-heading');
+                    if (el) el.textContent = data.sectionHeading;
+                }
+                if (data.sectionTag !== undefined) {
+                    const el = document.getElementById('pub-section-tag');
+                    if (el) el.textContent = `[ ${data.sectionTag} ]`;
+                }
+                if (data.projectName !== undefined) {
+                    const el = document.getElementById('pub-project-name');
+                    if (el) el.textContent = data.projectName;
+                }
+                if (data.genreTags !== undefined) {
+                    const el = document.getElementById('pub-genre-tags');
+                    if (el) el.textContent = `[ ${data.genreTags.toUpperCase()} ]`;
+                }
+                if (data.story !== undefined) {
+                    const el = document.getElementById('pub-story');
+                    if (el) el.textContent = data.story;
+                }
+
+                // Poster
+                if (data.poster) {
+                    const posterImg = document.getElementById('pub-poster-img');
+                    if (posterImg) {
+                        posterImg.src = data.poster;
+                        posterImg.style.display = 'block';
+                    }
+                }
+
+                // Director Note
+                if (data.directorNote && data.directorNote.trim() !== "") {
+                    const noteEl = document.getElementById('pub-director-note-container');
+                    if (noteEl) {
+                        noteEl.textContent = `"${data.directorNote}"`;
+                        noteEl.style.display = 'block';
+                    }
+                } else {
+                    const noteEl = document.getElementById('pub-director-note-container');
+                    if (noteEl) noteEl.style.display = 'none';
+                }
+
+                // Announcement Banner
+                if (data.announcementToggle && data.announcementText) {
+                    const bannerEl = document.getElementById('pub-announcement-banner');
+                    if (bannerEl) {
+                        bannerEl.textContent = data.announcementText;
+                        bannerEl.style.display = 'block';
+                    }
+                } else {
+                    const bannerEl = document.getElementById('pub-announcement-banner');
+                    if (bannerEl) bannerEl.style.display = 'none';
+                }
+
+                // Teaser video
+                if (data.teaser) {
+                    const pubTeaserLink = document.getElementById('pub-teaser-link');
+                    const pubTeaserVid = document.getElementById('pub-teaser-video');
+                    const ajTeaserLink = document.getElementById('aj-teaser-link');
+                    const ajTeaserVid = document.getElementById('aj-teaser-video');
+
+                    if (data.teaser.includes('instagram.com') || data.teaser.includes('http')) {
+                        if (pubTeaserLink) pubTeaserLink.href = data.teaser;
+                        if (ajTeaserLink) ajTeaserLink.href = data.teaser;
+                    } else if (data.teaser.endsWith('.mp4')) {
+                        if (pubTeaserVid) pubTeaserVid.src = data.teaser;
+                        if (ajTeaserVid) ajTeaserVid.src = data.teaser;
+                    }
+                }
+
+                // Hydrate Ajinkyan Dedicated View
+                if (data.projectName !== undefined) {
+                    const heroTitle = document.getElementById('aj-hero-title');
+                    if (heroTitle) heroTitle.textContent = data.projectName;
+                }
+                if (data.genreTags !== undefined) {
+                    const el = document.getElementById('aj-genre');
+                    if (el) el.textContent = data.genreTags;
+                }
+                if (data.language !== undefined) {
+                    const el = document.getElementById('aj-language');
+                    if (el) el.textContent = data.language;
+                }
+                if (data.status !== undefined) {
+                    const el = document.getElementById('aj-status');
+                    if (el) el.textContent = data.status;
+                }
+                if (data.releasing !== undefined) {
+                    const el = document.getElementById('aj-releasing');
+                    if (el) el.textContent = data.releasing;
+                }
+
+                // NOW FILMING Toggles
+                if (data.nowFilming === false) {
+                    const pubTag = document.getElementById('pub-section-tag');
+                    if (pubTag) pubTag.style.display = 'none';
+                }
+
+                // BTS Carousel Overrides
+                if (data.btsImages && Array.isArray(data.btsImages) && data.btsImages.length > 0) {
+                    const ajSlides = document.getElementById('aj-bts-slides');
+                    const ajDots = document.getElementById('aj-bts-dots');
+
+                    if (ajSlides && ajDots) {
+                        ajSlides.innerHTML = '';
+                        ajDots.innerHTML = '';
+
+                        data.btsImages.forEach((src, idx) => {
+                            // slide
+                            const img = document.createElement('img');
+                            img.src = src;
+                            img.className = 'bts-carousel-slide' + (idx === 0 ? ' active' : '');
+                            img.alt = `BTS ${idx + 1}`;
+                            ajSlides.appendChild(img);
+
+                            // dot
+                            const dot = document.createElement('div');
+                            dot.className = 'bts-dot' + (idx === 0 ? ' active' : '');
+                            // Set click handler using window context just in case
+                            dot.onclick = () => { if (window.setBtsCarousel) window.setBtsCarousel(idx); };
+                            ajDots.appendChild(dot);
+                        });
+
+                        // We also need to update totalBtsSlides variable in script.js if possible
+                        if (typeof window.totalBtsSlides !== 'undefined') {
+                            window.totalBtsSlides = data.btsImages.length;
+                        } else {
+                            // Let's redefine it
+                            window.totalBtsSlides = data.btsImages.length;
+                        }
+
+                        // Ensure first slide is shown (reset active states)
+                        if (window.currentBtsSlide !== undefined) window.currentBtsSlide = 0;
+                    }
+                }
+
+            } catch (e) {
+                console.error("Error hydrating project data from admin:", e);
+            }
+        });
+    </script>
 </body>
 
 </html>
