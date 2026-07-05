@@ -1951,6 +1951,218 @@ body.modal-open {
     background-color: #FFF;
 }
 
+/* AJINKYAN SYNOPSIS SECTION */
+.ajinkyan-synopsis-section {
+    background-color: #2A2828;
+    border-left: 2px solid #C4916A;
+    border-radius: 6px;
+    padding: 40px;
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+.synopsis-label {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    text-transform: uppercase;
+    color: var(--text-muted, #888);
+    font-size: 11px;
+    margin-bottom: 8px;
+}
+
+.synopsis-heading {
+    font-family: var(--font-heading, 'Cormorant Garamond', serif);
+    font-size: 32px;
+    color: #F0EDE6;
+    margin: 0;
+}
+
+.synopsis-divider {
+    border-top: 1px solid #C4916A;
+    width: 60px;
+    margin: 16px 0 24px 0;
+}
+
+.synopsis-body p {
+    font-family: var(--font-body, 'Outfit', sans-serif);
+    font-size: 17px;
+    line-height: 1.8;
+    color: #D0CCC8;
+    margin: 0;
+}
+
+.synopsis-body p + p {
+    margin-top: 20px;
+}
+
+.synopsis-quote {
+    margin-top: 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.synopsis-quote-inner {
+    border-left: 1px solid #C4916A;
+    border-right: 1px solid #C4916A;
+    padding: 0 24px;
+    display: inline-block;
+}
+
+.synopsis-quote-text {
+    font-family: var(--font-heading, 'Cormorant Garamond', serif);
+    font-style: italic;
+    font-size: 24px;
+    color: #C4916A;
+    margin: 0;
+}
+
+.synopsis-quote-author {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 11px;
+    color: var(--text-muted, #888);
+    margin-top: 12px;
+}
+
+/* AJINKYAN CAST & CHARACTERS SECTION */
+.ajinkyan-cast-section {
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+.cast-label {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    text-transform: uppercase;
+    color: var(--text-muted, #7A7575);
+    font-size: 11px;
+    text-align: center;
+}
+
+.cast-heading {
+    font-family: var(--font-heading, 'Cormorant Garamond', serif);
+    font-size: 32px;
+    color: #F0EDE6;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.cast-divider {
+    border-top: 1px solid #C4916A;
+    width: 60px;
+    margin: 16px auto 32px auto;
+}
+
+.cast-subheading {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    color: #C4916A;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.cast-margin-top {
+    margin-top: 40px;
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.character-card {
+    background-color: #2A2828;
+    border-left: 2px solid #C4916A;
+    border-radius: 6px;
+    padding: 28px;
+    box-shadow: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.character-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 12px);
+}
+
+.character-name {
+    font-family: var(--font-heading, 'Cormorant Garamond', serif);
+    font-size: 22px;
+    color: #FFF;
+    margin: 0 0 8px 0;
+    text-align: left;
+}
+
+.character-role {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 10px;
+    color: #C4916A;
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.character-desc {
+    font-family: var(--font-body, 'Outfit', sans-serif);
+    font-size: 14px;
+    color: var(--text-muted, #7A7575);
+    line-height: 1.7;
+    margin: 0;
+    text-align: left;
+    flex: 1;
+}
+
+.cast-rows {
+    display: flex;
+    flex-direction: column;
+}
+
+.cast-row {
+    background-color: #1C1C1E;
+    padding: 20px 28px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actor-name {
+    font-family: var(--font-body, 'Outfit', sans-serif);
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.actor-name.tba {
+    color: #555555;
+    font-weight: normal;
+}
+
+.casting-tag {
+    color: #C4916A;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 10px;
+}
+
+.actor-role {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 11px;
+    color: var(--text-muted, #7A7575);
+}
+
+.cast-footer-note {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 10px;
+    color: var(--text-muted, #7A7575);
+    text-align: center;
+    margin-top: 32px;
+}
+
 @media (max-width: 768px) {
     .ajinkyan-hero-title {
         font-size: 64px;
@@ -1963,6 +2175,19 @@ body.modal-open {
     .ajinkyan-details-strip {
         flex-direction: column;
         text-align: center;
+    }
+
+    .ajinkyan-synopsis-section {
+        padding: 24px;
+    }
+
+    .character-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .character-card:last-child:nth-child(odd) {
+        grid-column: auto;
+        max-width: none;
     }
 }
 

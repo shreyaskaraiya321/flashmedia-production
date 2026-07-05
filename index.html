@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashmeidia Film Production</title>
+    <meta name="description"
+        content="Flashmeidia Film Production brings stories to life through cinematic vision, artistic integrity, and bold creative direction.">
+
     <meta name="description"
         content="Flashmeidia Film Production brings stories to life through cinematic vision, artistic integrity, and bold creative direction.">
 
@@ -14,8 +18,13 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 
 <body>
     <!-- 1. NAVBAR -->
@@ -35,9 +44,13 @@
                 <button class="btn ghost outline nav-contact-btn" onclick="openApplyModal()"
                     style="border: 1px solid #C4916A; color: #C4916A; background: transparent; padding: 10px 24px; border-radius: 6px; font-family: var(--font-body); font-weight: 500; font-size: 14px;">Contact
                     for a Role</button>
+                <button class="btn ghost outline nav-contact-btn" onclick="openApplyModal()"
+                    style="border: 1px solid #C4916A; color: #C4916A; background: transparent; padding: 10px 24px; border-radius: 6px; font-family: var(--font-body); font-weight: 500; font-size: 14px;">Contact
+                    for a Role</button>
             </div>
         </div>
     </nav>
+
 
     <!-- Main Content Wrapper -->
     <div id="main-content">
@@ -52,12 +65,15 @@
                 <p class="hero-subtext">
                     Flashmeidia Film Production brings stories to life through cinematic vision, <br
                         class="desktop-only">artistic integrity, and bold creative direction.
+                    Flashmeidia Film Production brings stories to life through cinematic vision, <br
+                        class="desktop-only">artistic integrity, and bold creative direction.
                 </p>
                 <div class="hero-ctas">
                     <button class="btn filled">Explore Our Work</button>
                     <button class="btn ghost outline" onclick="openApplyModal()">Contact for a Role</button>
                 </div>
             </div>
+
 
             <div class="hero-marquee-wrapper">
                 <div class="hero-divider"></div>
@@ -136,6 +152,18 @@
                     Role</button>
             </div>
         </section>
+        <!-- 7. CAREERS -->
+        <section class="careers" id="careers">
+            <h2 class="section-heading text-center mb-large">Find Your Role in the Frame</h2>
+            <div class="careers-subtext text-center"
+                style="font-family: var(--font-body); color: #7A7575; font-size: 18px; margin-bottom: 2rem;">
+                Whether you're in front of the camera or behind it &mdash; there's a place for you here.
+            </div>
+            <div class="text-center">
+                <button class="btn ghost outline contact-role-btn" onclick="openApplyModal()">Contact for a
+                    Role</button>
+            </div>
+        </section>
 
 
         <!-- 8. FOOTER -->
@@ -172,6 +200,9 @@
                     Flashmeidia Film Production is an independent creative studio dedicated to cinematic storytelling,
                     talent discovery, and film culture. From original films to branded content, we operate at the
                     intersection of art and execution.
+                    Flashmeidia Film Production is an independent creative studio dedicated to cinematic storytelling,
+                    talent discovery, and film culture. From original films to branded content, we operate at the
+                    intersection of art and execution.
                 </p>
                 <div class="about-stats">
                     <span class="stat-pill">12+ Projects</span>
@@ -180,6 +211,8 @@
                 </div>
             </div>
             <div class="about-image">
+                <img src="assets/poster.jpg" alt="A film Written and Directed by Shubham Kudre"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block;">
                 <img src="assets/poster.jpg" alt="A film Written and Directed by Shubham Kudre"
                     style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block;">
             </div>
@@ -195,9 +228,9 @@
     <div id="ajinkyan-view" class="hidden ajinkyan-page">
         <!-- HERO TREATMENT -->
         <div class="ajinkyan-hero">
-            <div class="ajinkyan-hero-tag">[ FLASHMEIDIA ORIGINAL ]</div>
-            <h1 class="ajinkyan-hero-title">Ajinkyan</h1>
-            <p class="ajinkyan-hero-tagline">Not just a film. An emotion.</p>
+            <div class="ajinkyan-hero-tag" id="aj-hero-tag">[ FLASHMEIDIA ORIGINAL ]</div>
+            <h1 class="ajinkyan-hero-title" id="aj-hero-title">Ajinkyan</h1>
+            <p class="ajinkyan-hero-tagline" id="aj-hero-tagline">Not just a film. An emotion.</p>
             <div class="ajinkyan-hero-divider"></div>
         </div>
 
@@ -214,12 +247,122 @@
                 </div>
             </div>
         </div>
+        <!-- SYNOPSIS SECTION -->
+        <div class="ajinkyan-synopsis-section">
+            <div class="synopsis-label">[ SYNOPSIS ]</div>
+            <h2 class="synopsis-heading">The Story</h2>
+            <div class="synopsis-divider"></div>
+
+            <div class="synopsis-body">
+                <p>Ajinkyan follows the journey of Ajinkya, a young cadet at Ajinkyadwar Sainik School, Satara — a
+                    prestigious military residential school nestled in Maharashtra. Bright, passionate, and full of
+                    dreams, Ajinkya enlists with hopes of becoming a decorated soldier and making his family proud.</p>
+                <p>But life inside the school is far from what he imagined. Beneath the discipline and camaraderie lies
+                    a world of complex hierarchies, unspoken rules, and emotional battles. As Ajinkya navigates
+                    friendships, rivalries, and the weight of expectation, he begins to question what it truly means to
+                    serve — not just a nation, but oneself.</p>
+                <p>Ajinkyan is a deeply emotional coming-of-age story that explores identity, sacrifice, belonging, and
+                    the invisible wars fought within — long before any battlefield is ever reached.</p>
+            </div>
+
+            <div class="synopsis-quote">
+                <div class="synopsis-quote-inner">
+                    <p class="synopsis-quote-text">"Some legacies aren't inherited. They're lived."</p>
+                </div>
+                <div class="synopsis-quote-author">— Ajinkyan, 2027</div>
+            </div>
+        </div>
+
+        <!-- CAST & CHARACTERS SECTION -->
+        <div class="ajinkyan-cast-section">
+            <div class="cast-label">[ CAST & CHARACTERS ]</div>
+            <h2 class="cast-heading">The People of the Story</h2>
+            <div class="cast-divider"></div>
+
+            <!-- SECTION 1: PRINCIPAL CHARACTERS -->
+            <div class="cast-subheading">[ PRINCIPAL CHARACTERS ]</div>
+
+            <div class="character-grid">
+                <!-- CARD 1 -->
+                <div class="character-card">
+                    <h3 class="character-name">Shivam Deshpande</h3>
+                    <div class="character-role">[ LEAD &middot; PROTAGONIST ]</div>
+                    <p class="character-desc">The Determined Cadet. Quiet, disciplined, and driven by an unwavering
+                        dream. His journey from a lost 11-year-old to an Army officer forms the soul of the story.</p>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="character-card">
+                    <h3 class="character-name">Preeti Rathod</h3>
+                    <div class="character-role">[ LEAD &middot; FEMALE ROLE ]</div>
+                    <p class="character-desc">The Quiet Strength. Confident and compassionate. A steady presence whose
+                        love and understanding become Shivam's greatest support. Daughter of the school principal.</p>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="character-card">
+                    <h3 class="character-name">Omkar Patil</h3>
+                    <div class="character-role">[ SUPPORTING &middot; FRIEND ]</div>
+                    <p class="character-desc">The Loyal Brother. A scholarship student and farmer's son whose humor,
+                        resilience, and unconditional friendship keep the group together.</p>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="character-card">
+                    <h3 class="character-name">Aditya Kulkarni</h3>
+                    <div class="character-role">[ SUPPORTING &middot; FRIEND ]</div>
+                    <p class="character-desc">The Voice of Reason. Calm, mature, and thoughtful. The friend everyone
+                        turns to when emotions run high and decisions matter.</p>
+                </div>
+
+                <!-- CARD 5 -->
+                <div class="character-card">
+                    <h3 class="character-name">Col. S. K. Rathod</h3>
+                    <div class="character-role">[ SUPPORTING &middot; AUTHORITY ]</div>
+                    <p class="character-desc">Principal of Sainik School Satara and Preeti's father. Strict and
+                        disciplined &mdash; a commanding presence who shapes the cadets through both fear and respect.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SECTION 2: CAST -->
+            <div class="cast-subheading cast-margin-top">[ CAST ]</div>
+
+            <div class="cast-rows">
+                <div class="cast-row">
+                    <div class="actor-name">Lucky Yadav</div>
+                    <div class="actor-role">[ OMKAR ROLE ]</div>
+                </div>
+                <div class="cast-row">
+                    <div class="actor-name tba">To Be Announced <span class="casting-tag">[ CASTING OPEN ]</span></div>
+                    <div class="actor-role">[ ADITYA ROLE ]</div>
+                </div>
+                <div class="cast-row">
+                    <div class="actor-name tba">To Be Announced <span class="casting-tag">[ CASTING OPEN ]</span></div>
+                    <div class="actor-role">[ ACTRESS &middot; FEMALE LEAD ]</div>
+                </div>
+                <div class="cast-row">
+                    <div class="actor-name tba">To Be Announced <span class="casting-tag">[ CASTING OPEN ]</span></div>
+                    <div class="actor-role">[ FATHER'S ROLE ]</div>
+                </div>
+                <div class="cast-row">
+                    <div class="actor-name tba">To Be Announced <span class="casting-tag">[ CASTING OPEN ]</span></div>
+                    <div class="actor-role">[ MOTHER'S ROLE ]</div>
+                </div>
+                <div class="cast-row">
+                    <div class="actor-name">Mr. Sayaji Shinde</div>
+                    <div class="actor-role">[ TEACHER'S ROLE ]</div>
+                </div>
+            </div>
+
+            <div class="cast-footer-note">[ FULL CAST TO BE ANNOUNCED &middot; CASTING IN PROGRESS ]</div>
+        </div>
 
         <!-- BTS CAROUSEL -->
         <div class="ajinkyan-bts-section">
             <div class="bts-label">[ BEHIND THE SCENES ]</div>
             <div class="bts-carousel-container">
-                <div class="bts-carousel-slides">
+                <div class="bts-carousel-slides" id="aj-bts-slides">
                     <img src="bts1.jpg" alt="BTS 1" class="bts-carousel-slide active">
                     <img src="bts2.jpg" alt="BTS 2" class="bts-carousel-slide">
                     <img src="bts3.jpg" alt="BTS 3" class="bts-carousel-slide">
@@ -228,7 +371,7 @@
                 </div>
                 <button class="bts-carousel-btn prev" onclick="moveBtsCarousel(-1)">‹</button>
                 <button class="bts-carousel-btn next" onclick="moveBtsCarousel(1)">›</button>
-                <div class="bts-carousel-dots">
+                <div class="bts-carousel-dots" id="aj-bts-dots">
                     <div class="bts-dot active" onclick="setBtsCarousel(0)"></div>
                     <div class="bts-dot" onclick="setBtsCarousel(1)"></div>
                     <div class="bts-dot" onclick="setBtsCarousel(2)"></div>
@@ -242,11 +385,11 @@
         <div class="ajinkyan-details-strip">
             <div class="details-item">
                 <div class="details-item-label">[ GENRE ]</div>
-                <div class="details-item-value">Drama · Social</div>
+                <div class="details-item-value" id="aj-genre">Drama · Social</div>
             </div>
             <div class="details-item">
                 <div class="details-item-label">[ LANGUAGE ]</div>
-                <div class="details-item-value">Marathi · Hindi</div>
+                <div class="details-item-value" id="aj-language">Marathi · Hindi</div>
             </div>
             <div class="details-item">
                 <div class="details-item-label">[ PRODUCTION ]</div>
@@ -254,16 +397,18 @@
             </div>
             <div class="details-item">
                 <div class="details-item-label">[ STATUS ]</div>
-                <div class="details-item-value">In Production</div>
+                <div class="details-item-value" id="aj-status">In Production</div>
             </div>
             <div class="details-item">
                 <div class="details-item-label">[ RELEASING ]</div>
-                <div class="details-item-value">To Be Decided</div>
+                <div class="details-item-value" id="aj-releasing">To Be Decided</div>
             </div>
         </div>
 
         <!-- BOTTOM CTA -->
         <div class="ajinkyan-bottom-cta">
+            <a href="https://www.instagram.com/flashmedia.production/" target="_blank" rel="noopener noreferrer"
+                class="btn filled ajinkyan-instagram-btn">View Latest Updates on Instagram</a>
             <a href="https://www.instagram.com/flashmedia.production/" target="_blank" rel="noopener noreferrer"
                 class="btn filled ajinkyan-instagram-btn">View Latest Updates on Instagram</a>
         </div>
@@ -293,6 +438,13 @@
                     <div class="detail-item"><span class="detail-dot">·</span> <a
                             href="https://www.linkedin.com/in/shubham-kudre-6572a936b/" target="_blank"
                             rel="noopener noreferrer" class="contact-link">LinkedIn ↗</a></div>
+                    <div class="detail-item"><span class="detail-dot">·</span> <a href="mailto:flashmedia824@gmail.com"
+                            class="contact-link">flashmedia824@gmail.com</a></div>
+                    <div class="detail-item"><span class="detail-dot">·</span> <a href="tel:+919689036533"
+                            class="contact-link">+91 9689036533</a></div>
+                    <div class="detail-item"><span class="detail-dot">·</span> <a
+                            href="https://www.linkedin.com/in/shubham-kudre-6572a936b/" target="_blank"
+                            rel="noopener noreferrer" class="contact-link">LinkedIn ↗</a></div>
                 </div>
             </div>
             <div class="card-right">
@@ -314,6 +466,7 @@
             </div>
         </div>
 
+
         <div class="contact-footer-text">
             FLASHMEIDIA FILM PRODUCTION · EST. 2025
         </div>
@@ -328,16 +481,33 @@
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                 </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/shubham-kudre-6572a936b/" target="_blank" rel="noopener noreferrer"
-                class="social-icon-link">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect x="2" y="9" width="4" height="12"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                </svg>
-            </a>
+                <a href="https://www.instagram.com/flashmedia.production/" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/shubham-kudre-6572a936b/" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                    <a href="https://www.linkedin.com/in/shubham-kudre-6572a936b/" target="_blank"
+                        rel="noopener noreferrer" class="social-icon-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
         </div>
     </div>
 
@@ -349,6 +519,7 @@
             <div id="apply-form-container">
                 <h3 class="apply-modal-heading">Apply for a Role</h3>
                 <p class="apply-modal-subtext">Fill in your details and we'll get back to you.</p>
+
 
                 <form id="apply-role-form" novalidate>
                     <div class="form-row grid-2-col-small">
@@ -364,6 +535,7 @@
                         </div>
                     </div>
 
+
                     <div class="form-row grid-2-col-small">
                         <div class="form-group">
                             <label for="apply-city">CITY</label>
@@ -377,6 +549,7 @@
                         </div>
                     </div>
 
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="apply-email">EMAIL ADDRESS</label>
@@ -384,6 +557,7 @@
                             <div class="error-msg"></div>
                         </div>
                     </div>
+
 
                     <div class="form-row">
                         <div class="form-group">
@@ -393,6 +567,7 @@
                         </div>
                     </div>
 
+
                     <div class="form-row">
                         <label for="apply-role">ROLE YOU'RE LOOKING FOR</label>
                         <select id="apply-role" name="role" required>
@@ -400,6 +575,7 @@
                         </select>
                         <div class="error-msg"></div>
                     </div>
+
 
                     <div class="form-row">
                         <div class="form-group">
@@ -414,12 +590,14 @@
                         </div>
                     </div>
 
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="apply-portfolio">PORTFOLIO / INSTAGRAM LINK</label>
                             <input type="url" id="apply-portfolio" name="portfolio" placeholder="paste your link here">
                         </div>
                     </div>
+
 
                     <div class="form-row">
                         <div class="form-group">
@@ -428,25 +606,32 @@
                         </div>
                     </div>
 
+
                     <button type="submit" class="btn filled full-width form-submit-btn">Submit Application</button>
+                    <div class="form-general-error hidden" id="apply-form-error">Something went wrong. Please try again.
+                    </div>
                     <div class="form-general-error hidden" id="apply-form-error">Something went wrong. Please try again.
                     </div>
                 </form>
             </div>
 
+
             <div id="apply-success-container" class="hidden text-center">
                 <svg class="success-icon" viewBox="0 0 24 24" width="64" height="64" stroke="var(--accent)"
                     stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <h3 class="success-heading">Application Received</h3>
-                <p class="success-subtext">We'll review your profile and reach out soon.</p>
-                <button class="btn ghost outline" onclick="closeApplyModal()">Close</button>
+                    <svg class="success-icon" viewBox="0 0 24 24" width="64" height="64" stroke="var(--accent)"
+                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <h3 class="success-heading">Application Received</h3>
+                    <p class="success-subtext">We'll review your profile and reach out soon.</p>
+                    <button class="btn ghost outline" onclick="closeApplyModal()">Close</button>
             </div>
         </div>
     </div>
 
     <script type="module" src="script.js"></script>
 </body>
+
 
 </html>
