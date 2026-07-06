@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Flashmeidia</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #1C1C1E;
+            --bg-card: #2A2828;
+            --bg-card-alt: #242222;
+            --accent: #C4916A;
+            --text-white: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.6);
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+        }
+
+        /* --- PAGE 1: LOGIN --- */
+        #login-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 24px;
+        }
+        
+        .login-card {
+            background: var(--bg-card);
+            width: 100%;
+            max-width: 400px;
+            padding: 48px;
+            border-radius: 8px;
+            border-top: 2px solid var(--accent);
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .login-logo {
+            width: 60px;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+        
+        .login-heading {
+            font-family: var(--font-display);
+            font-size: 36px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        
+        .login-subtext {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            background: var(--bg-dark);
+            border: none;
+            border-bottom: 1px solid var(--accent);
+            color: var(--text-white);
+            font-family: var(--font-body);
+            font-size: 16px;
+            padding: 12px 0;
+            outline: none;
+            transition: box-shadow 0.2s;
+        }
+        
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            box-shadow: 0 1px 0 0 var(--accent);
+        }
+        
+        .password-wrapper {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 4px;
+            font-family: var(--font-body);
+            font-size: 18px;
+        }
+
+        .toggle-password:hover {
+            color: var(--text-white);
+        }
+        
+        .btn-primary {
+            width: 100%;
+            background: var(--accent);
+            color: var(--bg-dark);
+            border: none;
+            padding: 14px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            margin-top: 8px;
+        }
+        
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+        
+        .btn-ghost {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 10px 24px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn-ghost:hover {
+            background: rgba(196, 145, 106, 0.1);
+        }
+        
+        .error-msg {
+            color: var(--accent);
+            font-size: 14px;
+            margin-top: 16px;
+            display: none;
+            font-family: var(--font-body);
+        }
+
+        /* --- PAGE 2: DASHBOARD --- */
+        #dashboard-page {
+            display: none;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .admin-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .admin-navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .admin-navbar-left img {
+            width: 40px;
+            border-radius: 4px;
+        }
+        
+        .admin-navbar-left h2 {
+            font-size: 18px;
+            font-weight: 500;
+            font-family: var(--font-body);
+        }
+        
+        .dashboard-layout {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            background: var(--bg-card);
+            display: flex;
+            flex-direction: column;
+            padding: 24px 0;
+            border-right: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .profile-section {
+            padding: 0 24px 24px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 24px;
+        }
+        
+        .profile-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--bg-dark);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-family: var(--font-display);
+            margin: 0 auto 12px;
+            border: 1px solid rgba(196, 145, 106, 0.3);
+        }
+        
+        .profile-name {
+            font-size: 14px;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        
+        .profile-role {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+        
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .nav-link {
+            padding: 12px 24px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            border-left: 2px solid transparent;
+            transition: all 0.2s;
+            cursor: pointer;
+            font-weight: 400;
+        }
+        
+        .nav-link:hover {
+            color: var(--text-white);
+            background: rgba(255,255,255,0.02);
+        }
+        
+        .nav-link.active {
+            color: var(--accent);
+            border-left-color: var(--accent);
+            background: rgba(196, 145, 106, 0.05);
+        }
+        
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+        
+        .section-view {
+            display: none;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .section-view.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-header {
+            margin-bottom: 32px;
+        }
+        
+        .section-heading {
+            font-family: var(--font-display);
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        
+        .section-subtext {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+        
+        /* SECTION A: Role Applications */
+        .table-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .search-input {
+            background: var(--bg-dark);
+            border: none;
+            border-bottom: 1px solid var(--accent);
+            padding: 10px 0;
+            color: var(--text-white);
+            font-family: var(--font-body);
+            width: 300px;
+            outline: none;
+        }
+        
+        .search-input:focus {
+            box-shadow: 0 1px 0 0 var(--accent);
+        }
+        
+        .empty-state {
+            background: var(--bg-card);
+            padding: 64px 24px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .empty-state-text {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-size: 15px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+        
+        .awaiting-tag {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            background: rgba(255,255,255,0.05);
+            padding: 6px 12px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .data-table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+            background: var(--bg-card);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1000px;
+        }
+        
+        th, td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 14px;
+        }
+        
+        th {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+        
+        tr:nth-child(even) {
+            background: var(--bg-card-alt);
+        }
+        
+        tr:hover {
+            background: rgba(196, 145, 106, 0.05);
+        }
+
+        /* SECTION B: Project Status */
+        .form-card {
+            background: var(--bg-card);
+            border-left: 2px solid var(--accent);
+            padding: 40px;
+            border-radius: 8px;
+            max-width: 700px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        
+        .toggle-switch-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 32px 0 24px;
+        }
+        
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: var(--bg-dark);
+            transition: .3s;
+            border-radius: 24px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: var(--text-muted);
+            transition: .3s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: var(--accent);
+        }
+        
+        input:checked + .slider:before {
+            background-color: var(--bg-dark);
+            transform: translateX(20px);
+        }
+        
+        .toggle-label {
+            font-size: 15px;
+            cursor: pointer;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        
+        .note-muted {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 24px;
+            display: block;
+        }
+        
+        .form-group select {
+            appearance: none;
+            cursor: pointer;
+        }
+        
+        /* SECTION C: Casting Form Settings */
+        .role-list {
+            max-width: 500px;
+            margin-bottom: 32px;
+        }
+        
+        .role-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .role-row input {
+            flex: 1;
+            background: var(--bg-dark);
+            border: none;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            color: var(--text-white);
+            padding: 12px 16px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            border-radius: 4px 4px 0 0;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        
+        .role-row input:focus {
+            border-bottom-color: var(--accent);
+        }
+        
+        .btn-delete {
+            background: none;
+            border: none;
+            color: #ff6b6b;
+            cursor: pointer;
+            font-family: var(--font-mono);
+            font-size: 16px;
+            padding: 8px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        
+        .btn-delete:hover {
+            opacity: 1;
+        }
+        
+        .btn-add-role {
+            margin-top: 8px;
+        }
+        
+        /* SECTION D: Post a Role */
+        .post-role-layout {
+            display: flex;
+            gap: 5%;
+            align-items: flex-start;
+        }
+        
+        .post-form-col {
+            width: 55%;
+        }
+        
+        .active-posts-col {
+            width: 40%;
+        }
+        
+        .active-posts-heading {
+            font-family: var(--font-body);
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+        
+        .role-post-card {
+            background: var(--bg-dark);
+            border-left: 2px solid var(--accent);
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+        }
+        
+        .role-post-title {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .role-post-details {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .badge-active {
+            background: rgba(76, 175, 80, 0.15);
+            color: #4CAF50;
+        }
+        
+        .badge-draft {
+            background: rgba(255, 193, 7, 0.15);
+            color: #ffc107;
+        }
+        
+        .role-post-actions {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+        
+        .btn-danger-ghost {
+            color: rgba(255,255,255,0.6);
+            border-color: rgba(255,255,255,0.2);
+        }
+        .btn-danger-ghost:hover {
+            color: #ff6b6b;
+            border-color: #ff6b6b;
+            background: rgba(255, 107, 107, 0.1);
+        }
+        
+        .btn-success-ghost {
+            color: #4CAF50;
+            border-color: rgba(76, 175, 80, 0.5);
+        }
+        .btn-success-ghost:hover {
+            background: rgba(76, 175, 80, 0.1);
+        }
+        
+        .sample-data-note {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 24px;
+            white-space: pre-wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .post-role-layout {
+                flex-direction: column;
+            }
+            .post-form-col, .active-posts-col {
+                width: 100%;
+            }
+            .active-posts-col {
+                margin-top: 40px;
+            }
+            .dashboard-layout {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+                flex-direction: row;
+                padding: 0;
+                overflow-x: auto;
+            }
+            .profile-section {
+                display: none;
+            }
+            .nav-links {
+                flex-direction: row;
+                width: 100%;
+            }
+            .nav-link {
+                border-left: none;
+                border-bottom: 2px solid transparent;
+                white-space: nowrap;
+                padding: 16px 20px;
+            }
+            .nav-link.active {
+                border-left-color: transparent;
+                border-bottom-color: var(--accent);
+            }
+            .main-content {
+                padding: 24px;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+        
+        /* Toast Notification */
+        .toast-notification {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: rgba(30, 40, 30, 0.95);
+            border-left: 4px solid #4CAF50;
+            color: #fff;
+            padding: 16px 24px;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 9999;
+        }
+        
+        .toast-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .bts-thumbnail {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .bts-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .bts-remove-btn {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 20px;
+            height: 20px;
+            background: rgba(0,0,0,0.7);
+            color: #ff6b6b;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            cursor: pointer;
+        }
+        .bts-remove-btn:hover {
+            background: #ff6b6b;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1: ADMIN LOGIN -->
+    <div id="login-page">
+        <div class="login-card">
+            <img src="assets/Screenshot 2026-06-27 201140.webp" alt="Flashmeidia Logo" class="login-logo">
+            <h1 class="login-heading">Admin Portal</h1>
+            <p class="login-subtext">Flashmeidia Internal Access Only</p>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" autocomplete="username">
+                </div>
+                
+                <div class="form-group password-wrapper">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" autocomplete="current-password">
+                    <button type="button" class="toggle-password" id="toggle-pw" onclick="togglePasswordVisibility()">
+                        👁
+                    </button>
+                </div>
+                
+                <button type="submit" class="btn-primary">Login to Dashboard</button>
+                <p style="font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); text-align: center; margin-top: 12px;">[ TESTING MODE &middot; AUTHENTICATION DISABLED ]</p>
+                <div id="login-error" class="error-msg">Invalid credentials. Please try again.</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- PAGE 2: ADMIN DASHBOARD -->
+    <div id="dashboard-page">
+        <nav class="admin-navbar">
+            <div class="admin-navbar-left">
+                <img src="assets/Screenshot 2026-06-27 201140.webp" alt="Logo">
+                <h2>Admin Dashboard</h2>
+            </div>
+            <button class="btn-ghost" onclick="logout()">Logout</button>
+        </nav>
+        
+        <div class="dashboard-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="profile-section">
+                    <div class="profile-icon">SK</div>
+                    <div class="profile-name">Shubham Kudre</div>
+                    <div class="profile-role">Owner &middot; Admin</div>
+                </div>
+                
+                <div class="nav-links">
+                    <a class="nav-link active" onclick="switchTab('tab-applications', this)">Role Applications</a>
+                    <a class="nav-link" onclick="switchTab('tab-post-role', this)">Post a Role</a>
+                    <a class="nav-link" onclick="switchTab('tab-project', this)">Project Status</a>
+                    <a class="nav-link" onclick="switchTab('tab-settings', this)">Casting Form Settings</a>
+                </div>
+            </aside>
+            
+            <!-- Main Content Area -->
+            <main class="main-content">
+                
+                <!-- SECTION A: Role Applications -->
+                <div id="tab-applications" class="section-view active">
+                    <div class="section-header">
+                        <h1 class="section-heading">Role Applications</h1>
+                        <p class="section-subtext">All submissions from the Contact for a Role form</p>
+                    </div>
+                    
+                    <div class="table-actions">
+                        <input type="text" class="search-input" placeholder="Search by name or role...">
+                        <button class="btn-ghost" style="padding: 10px 16px;">Export to Google Sheets ↗</button>
+                    </div>
+                    
+                    <div class="data-table-wrapper" style="display: none;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>City</th>
+                                    <th>State</th>
+                                    <th>Email</th>
+                                    <th>Mobile</th>
+                                    <th>Role</th>
+                                    <th>Experience</th>
+                                    <th>Portfolio</th>
+                                    <th>Message</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="applications-tbody">
+                                <!-- Data will populate here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Placeholder empty state -->
+                    <div class="empty-state">
+                        <p class="empty-state-text">
+                            No applications yet. Submissions will appear here once the backend is connected.
+                        </p>
+                        <span class="awaiting-tag">[ AWAITING BACKEND INTEGRATION ]</span>
+                    </div>
+                </div>
+                
+                <!-- SECTION D: Post a Role -->
+                <div id="tab-post-role" class="section-view">
+                    <div class="section-header">
+                        <h1 class="section-heading">Post a Role</h1>
+                        <p class="section-subtext">Create a new vacancy that applicants can apply for</p>
+                    </div>
+                    
+                    <div class="post-role-layout">
+                        <!-- LEFT SIDE: POST A ROLE FORM -->
+                        <div class="post-form-col">
+                            <div class="form-card" style="max-width: 100%;">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Role Title</label>
+                                        <input type="text" placeholder="e.g. Female Lead, Sound Designer">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Role Type</label>
+                                        <select>
+                                            <option>Acting</option>
+                                            <option>Technical</option>
+                                            <option>Production</option>
+                                            <option>Music</option>
+                                            <option>Dance</option>
+                                            <option>Voice</option>
+                                            <option>Writing</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Project Name</label>
+                                    <input type="text" value="Ajinkyan">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Role Description</label>
+                                    <textarea rows="4" placeholder="Describe the role, character, responsibilities..."></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Requirements</label>
+                                    <textarea rows="3" placeholder="Age range, skills, experience needed, languages..."></textarea>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Shoot Days</label>
+                                        <input type="number" placeholder="e.g. 15">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Shoot Location</label>
+                                        <input type="text" placeholder="e.g. Satara, Maharashtra">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Audition Type</label>
+                                        <select>
+                                            <option>Online</option>
+                                            <option>In-Person</option>
+                                            <option>Both</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Contact for this role</label>
+                                        <input type="text" value="+91 9689036533">
+                                    </div>
+                                </div>
+                                
+                                <div class="toggle-switch-wrapper" style="margin-top: 16px;">
+                                    <label class="toggle-switch" for="role-status">
+                                        <input type="checkbox" id="role-status" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <label for="role-status" class="toggle-label">Make this role visible to applicants</label>
+                                </div>
+                                
+                                <button class="btn-primary" style="margin-top: 16px;">Post Role</button>
+                                <button class="btn-ghost" style="width: 100%; margin-top: 12px;">Save as Draft</button>
+                                
+                                <span class="note-muted" style="text-align: center; margin-top: 16px;">[ BACKEND NOT CONNECTED &middot; POSTS WILL NOT PERSIST YET ]</span>
+                            </div>
+                        </div>
+                        
+                        <!-- RIGHT SIDE: ACTIVE ROLE POSTINGS -->
+                        <div class="active-posts-col">
+                            <h2 class="active-posts-heading">Currently Posted Roles</h2>
+                            
+                            <!-- Card 1 -->
+                            <div class="role-post-card">
+                                <div class="status-badge badge-active">[ ACTIVE ]</div>
+                                <div class="role-post-title">Female Lead</div>
+                                <div class="role-post-details">
+                                    Project: Ajinkyan<br>
+                                    Type: Acting<br>
+                                    Shoot Days: 30+
+                                </div>
+                                <div class="role-post-actions">
+                                    <button class="btn-ghost btn-small">Edit</button>
+                                    <button class="btn-ghost btn-danger-ghost btn-small">Remove</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Card 2 -->
+                            <div class="role-post-card">
+                                <div class="status-badge badge-draft">[ DRAFT ]</div>
+                                <div class="role-post-title">Director of Photography</div>
+                                <div class="role-post-details">
+                                    Project: Ajinkyan<br>
+                                    Type: Technical<br>
+                                    Shoot Days: 45+
+                                </div>
+                                <div class="role-post-actions">
+                                    <button class="btn-ghost btn-small">Edit</button>
+                                    <button class="btn-ghost btn-success-ghost btn-small">Publish</button>
+                                </div>
+                            </div>
+                            
+                            <div class="sample-data-note">These are sample cards. 
+Live postings will appear here once backend is connected.
+[ SAMPLE DATA ]</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION B: Project Status -->
+                <div id="tab-project" class="section-view">
+                    <div class="section-header">
+                        <h1 class="section-heading">Current Project Status</h1>
+                        <p class="section-subtext">Update what visitors see in the Our Work section</p>
+                    </div>
+                    
+                    <div class="form-card">
+                        <!-- NEW FIELDS -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Section Heading</label>
+                                <input type="text" id="admin-section-heading" value="Inside the Frame">
+                            </div>
+                            <div class="form-group">
+                                <label>Section Eyebrow Tag</label>
+                                <input type="text" id="admin-section-tag" value="NOW FILMING">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Project Poster Image</label>
+                            <input type="file" id="admin-poster-upload" accept="image/jpeg, image/png, image/webp" style="padding-bottom: 12px; color: var(--text-muted);">
+                            <div id="admin-poster-preview" style="margin-top: 12px; display: none;">
+                                <img id="admin-poster-img" src="" style="height: 200px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); object-fit: cover;" alt="Poster Preview">
+                            </div>
+                        </div>
+
+                        <!-- EXISTING FIELDS (with IDs) -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Project Name</label>
+                                <input type="text" id="admin-project-name" value="Ajinkyan">
+                            </div>
+                            <div class="form-group">
+                                <label>Genre Tags</label>
+                                <input type="text" id="admin-genre-tags" value="Drama &middot; Social">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Project Story / Description</label>
+                            <textarea id="admin-story" rows="6">It revolves around Ajinkya, a young man navigating the complexities of modern relationships, ambition, and societal expectations in a rapidly changing world. As he strives to carve his own path, Ajinkya is confronted by a series of moral and emotional dilemmas that test his resilience and core values.</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Additional Notes / Director's Note (Optional)</label>
+                            <textarea id="admin-director-note" rows="3" placeholder="Add a director's note or production update..."></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Production Status</label>
+                                <select id="admin-status">
+                                    <option>In Pre-Production</option>
+                                    <option selected>In Production</option>
+                                    <option>Post-Production</option>
+                                    <option>Released</option>
+                                    <option>On Hold</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Releasing</label>
+                                <input type="text" id="admin-releasing" value="To Be Decided">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Language</label>
+                                <input type="text" id="admin-language" value="Marathi &middot; Hindi">
+                            </div>
+                            <div class="form-group">
+                                <label>Teaser Link (Instagram or Video URL)</label>
+                                <input type="text" id="admin-teaser" placeholder="paste video src or instagram link">
+                            </div>
+                        </div>
+
+                        <!-- PROJECT ANNOUNCEMENTS -->
+                        <div class="form-row" style="margin-top: 16px;">
+                            <div class="form-group">
+                                <label>Announcement Banner (Optional)</label>
+                                <input type="text" id="admin-announcement-text" placeholder="e.g. Shoot begins August 2025!">
+                            </div>
+                        </div>
+                        <div class="toggle-switch-wrapper" style="margin-top: 0;">
+                            <label class="toggle-switch" for="admin-announcement-toggle">
+                                <input type="checkbox" id="admin-announcement-toggle">
+                                <span class="slider"></span>
+                            </label>
+                            <label for="admin-announcement-toggle" class="toggle-label">Show announcement on website</label>
+                        </div>
+
+                        <!-- BTS IMAGES MANAGER -->
+                        <div class="form-group" style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05);">
+                            <label>Behind the Scenes Images</label>
+                            <input type="file" id="admin-bts-upload" accept="image/jpeg, image/png, image/webp" multiple style="padding-bottom: 12px; color: var(--text-muted);">
+                            <div id="admin-bts-preview-grid" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
+                                <!-- Thumbnails will render here -->
+                            </div>
+                        </div>
+                        
+                        <div class="toggle-switch-wrapper" style="margin-top: 32px;">
+                            <label class="toggle-switch" for="now-filming">
+                                <input type="checkbox" id="now-filming" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <label for="now-filming" class="toggle-label">Show [ NOW FILMING ] badge on homepage</label>
+                        </div>
+                        
+                        <div class="form-actions" style="flex-wrap: wrap;">
+                            <button class="btn-primary" id="btn-save-project" style="width: auto; padding: 10px 24px; margin-top: 0;" type="button">Save Changes</button>
+                            <button class="btn-ghost" id="btn-preview-project" type="button">Preview Changes</button>
+                            <button class="btn-ghost btn-danger-ghost" id="btn-reset-project" type="button" style="margin-left: auto;">Reset to Default</button>
+                        </div>
+                        
+                        <span class="note-muted">[ SAVES TO LOCALSTORAGE FOR INSTANT FRONTEND UPDATES ]</span>
+                    </div>
+                </div>
+                
+                <!-- SECTION C: Casting Form Settings -->
+                <div id="tab-settings" class="section-view">
+                    <div class="section-header">
+                        <h1 class="section-heading">Casting Form Settings</h1>
+                        <p class="section-subtext">Control what roles appear in the Contact for a Role form</p>
+                    </div>
+                    
+                    <div class="form-card">
+                        <div class="role-list" id="role-list-container">
+                            <div class="role-row">
+                                <input type="text" value="Lead Actor (Male) - Age 20-25">
+                                <button class="btn-delete" onclick="this.parentElement.remove()" title="Remove Role">X</button>
+                            </div>
+                            <div class="role-row">
+                                <input type="text" value="Supporting Actress - Age 18-30">
+                                <button class="btn-delete" onclick="this.parentElement.remove()" title="Remove Role">X</button>
+                            </div>
+                            <div class="role-row">
+                                <input type="text" value="Child Artist - Age 8-12">
+                                <button class="btn-delete" onclick="this.parentElement.remove()" title="Remove Role">X</button>
+                            </div>
+                            <div class="role-row">
+                                <input type="text" value="Character Artist (Male/Female) - Age 40+">
+                                <button class="btn-delete" onclick="this.parentElement.remove()" title="Remove Role">X</button>
+                            </div>
+                            <div class="role-row">
+                                <input type="text" value="Background Extras">
+                                <button class="btn-delete" onclick="this.parentElement.remove()" title="Remove Role">X</button>
+                            </div>
+                            <div class="role-row">
+                                <input type="text" value="Crew / Behind the Scenes">
+                                <button class="btn-delete" onclick="this.parentElement.remove()" title="Remove Role">X</button>
+                            </div>
+                        </div>
+                        
+                        <button class="btn-ghost btn-add-role" onclick="addNewRole()">+ Add New Role</button>
+                        
+                        <div style="margin-top: 40px;">
+                            <button class="btn-primary" style="width: auto; padding: 10px 24px;">Update Role List</button>
+                        </div>
+                        
+                        <span class="note-muted">[ BACKEND NOT CONNECTED &middot; CHANGES WILL NOT PERSIST YET ]</span>
+                    </div>
+                </div>
+                
+            </main>
+        </div>
+    </div>
+    
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast-notification">✓ Changes saved. Live on website.</div>
+
+    <script>
+        // --- LOGIN LOGIC ---
+        const loginForm = document.getElementById('login-form');
+        const loginPage = document.getElementById('login-page');
+        const dashboardPage = document.getElementById('dashboard-page');
+        const errorMsg = document.getElementById('login-error');
+        
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Testing Mode: Skip validation
+            errorMsg.style.display = "none";
+            loginPage.style.display = "none";
+            dashboardPage.style.display = "flex";
+        });
+        
+        function logout() {
+            // Reset form
+            loginForm.reset();
+            errorMsg.style.display = "none";
+            
+            // Switch view
+            dashboardPage.style.display = "none";
+            loginPage.style.display = "flex";
+        }
+        
+        function togglePasswordVisibility() {
+            const pwInput = document.getElementById('password');
+            const toggleBtn = document.getElementById('toggle-pw');
+            
+            if (pwInput.type === 'password') {
+                pwInput.type = 'text';
+                toggleBtn.style.color = '#ffffff';
+            } else {
+                pwInput.type = 'password';
+                toggleBtn.style.color = 'var(--text-muted)';
+            }
+        }
+
+        // --- DASHBOARD NAVIGATION ---
+        function switchTab(tabId, navElement) {
+            // Update active link
+            document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+            navElement.classList.add('active');
+            
+            // Show selected view
+            document.querySelectorAll('.section-view').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // --- CASTING FORM SETTINGS ---
+        function addNewRole() {
+            const container = document.getElementById('role-list-container');
+            
+            const newRow = document.createElement('div');
+            newRow.className = 'role-row';
+            
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = 'Enter new role...';
+            
+            const btn = document.createElement('button');
+            btn.className = 'btn-delete';
+            btn.title = 'Remove Role';
+            btn.textContent = 'X';
+            btn.onclick = function() {
+                newRow.remove();
+            };
+            
+            newRow.appendChild(input);
+            newRow.appendChild(btn);
+            container.appendChild(newRow);
+            
+            input.focus();
+        }
+
+        // --- PROJECT STATUS SYNC LOGIC ---
+        
+        let posterBase64 = null;
+        let btsBase64Array = [];
+        
+        // Handle Poster Upload
+        document.getElementById('admin-poster-upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            if (file.size > 2 * 1024 * 1024) {
+                alert("Image too large. Please use under 2MB.");
+                this.value = '';
+                return;
+            }
+            compressImage(file, function(base64) {
+                posterBase64 = base64;
+                const preview = document.getElementById('admin-poster-preview');
+                const img = document.getElementById('admin-poster-img');
+                img.src = base64;
+                preview.style.display = 'block';
+            });
+        });
+        
+        // Handle BTS Images Upload
+        document.getElementById('admin-bts-upload').addEventListener('change', function(e) {
+            const files = Array.from(e.target.files);
+            for (let file of files) {
+                if (file.size > 2 * 1024 * 1024) {
+                    alert("One or more images are too large. Please use under 2MB.");
+                    continue;
+                }
+                compressImage(file, function(base64) {
+                    btsBase64Array.push(base64);
+                    renderBtsGrid();
+                });
+            }
+            this.value = ''; // Reset input
+        });
+        
+        function renderBtsGrid() {
+            const grid = document.getElementById('admin-bts-preview-grid');
+            grid.innerHTML = '';
+            btsBase64Array.forEach((base64, index) => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'bts-thumbnail';
+                
+                const img = document.createElement('img');
+                img.src = base64;
+                
+                const btn = document.createElement('button');
+                btn.className = 'bts-remove-btn';
+                btn.innerHTML = 'X';
+                btn.onclick = () => {
+                    btsBase64Array.splice(index, 1);
+                    renderBtsGrid();
+                };
+                
+                wrapper.appendChild(img);
+                wrapper.appendChild(btn);
+                grid.appendChild(wrapper);
+            });
+        }
+        
+        // Simple Canvas Compression
+        function compressImage(file, callback) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    let width = img.width;
+                    let height = img.height;
+                    
+                    // Max dimension 1200
+                    const MAX = 1200;
+                    if (width > height && width > MAX) {
+                        height *= MAX / width;
+                        width = MAX;
+                    } else if (height > MAX) {
+                        width *= MAX / height;
+                        height = MAX;
+                    }
+                    
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+                    
+                    // Output as webp for better compression
+                    callback(canvas.toDataURL('image/webp', 0.8));
+                };
+                img.src = event.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+        
+        // Save to LocalStorage
+        document.getElementById('btn-save-project').addEventListener('click', function() {
+            const data = {
+                sectionHeading: document.getElementById('admin-section-heading').value,
+                sectionTag: document.getElementById('admin-section-tag').value,
+                projectName: document.getElementById('admin-project-name').value,
+                genreTags: document.getElementById('admin-genre-tags').value,
+                story: document.getElementById('admin-story').value,
+                directorNote: document.getElementById('admin-director-note').value,
+                status: document.getElementById('admin-status').value,
+                releasing: document.getElementById('admin-releasing').value,
+                language: document.getElementById('admin-language').value,
+                teaser: document.getElementById('admin-teaser').value,
+                announcementText: document.getElementById('admin-announcement-text').value,
+                announcementToggle: document.getElementById('admin-announcement-toggle').checked,
+                nowFilming: document.getElementById('now-filming').checked,
+                poster: posterBase64,
+                btsImages: btsBase64Array
+            };
+            
+            try {
+                localStorage.setItem('fm_project_data', JSON.stringify(data));
+                showToast();
+            } catch (e) {
+                console.error("Storage limit exceeded or error saving:", e);
+                alert("Failed to save. You may have exceeded the storage limit with too many images.");
+            }
+        });
+        
+        // Reset to Default
+        document.getElementById('btn-reset-project').addEventListener('click', function() {
+            if(confirm("Are you sure? This will reset all project content.")) {
+                localStorage.removeItem('fm_project_data');
+                location.reload();
+            }
+        });
+        
+        // Preview Changes
+        document.getElementById('btn-preview-project').addEventListener('click', function() {
+            window.open('index.html', '_blank');
+        });
+        
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Initialize form from LocalStorage
+        function initAdminForm() {
+            const stored = localStorage.getItem('fm_project_data');
+            if (stored) {
+                try {
+                    const data = JSON.parse(stored);
+                    if(data.sectionHeading !== undefined) document.getElementById('admin-section-heading').value = data.sectionHeading;
+                    if(data.sectionTag !== undefined) document.getElementById('admin-section-tag').value = data.sectionTag;
+                    if(data.projectName !== undefined) document.getElementById('admin-project-name').value = data.projectName;
+                    if(data.genreTags !== undefined) document.getElementById('admin-genre-tags').value = data.genreTags;
+                    if(data.story !== undefined) document.getElementById('admin-story').value = data.story;
+                    if(data.directorNote !== undefined) document.getElementById('admin-director-note').value = data.directorNote;
+                    if(data.status !== undefined) document.getElementById('admin-status').value = data.status;
+                    if(data.releasing !== undefined) document.getElementById('admin-releasing').value = data.releasing;
+                    if(data.language !== undefined) document.getElementById('admin-language').value = data.language;
+                    if(data.teaser !== undefined) document.getElementById('admin-teaser').value = data.teaser;
+                    if(data.announcementText !== undefined) document.getElementById('admin-announcement-text').value = data.announcementText;
+                    if(data.announcementToggle !== undefined) document.getElementById('admin-announcement-toggle').checked = data.announcementToggle;
+                    if(data.nowFilming !== undefined) document.getElementById('now-filming').checked = data.nowFilming;
+                    
+                    if (data.poster) {
+                        posterBase64 = data.poster;
+                        document.getElementById('admin-poster-img').src = posterBase64;
+                        document.getElementById('admin-poster-preview').style.display = 'block';
+                    }
+                    if (data.btsImages && Array.isArray(data.btsImages)) {
+                        btsBase64Array = data.btsImages;
+                        renderBtsGrid();
+                    }
+                } catch(e) {
+                    console.error("Error parsing stored data", e);
+                }
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', initAdminForm);
+    </script>
+</body>
+</html>
