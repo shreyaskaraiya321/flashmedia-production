@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /admin
+
+Sitemap: https://flashmedia-production.vercel.app/sitemap.xml
+
+Host: https://flashmedia-production.vercel.app
