@@ -34,7 +34,7 @@ independent film India, film production Satara, Marathi film">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://flashmedia-production.vercel.app/">
+<meta property="og:url" content="https://flashmediaproduction.in/">
 <meta property="og:title" content="Flashmeidia Film Production | Official Website">
 <meta property="og:description" content="Independent film production house based 
 in Hyderabad. Currently producing Ajinkyan — a coming-of-age drama set in 
@@ -45,7 +45,7 @@ Sainik School Satara. One For All, All For One.">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://flashmedia-production.vercel.app/">
+<meta name="twitter:url" content="https://flashmediaproduction.in/">
 <meta name="twitter:title" content="Flashmeidia Film Production | Official Website">
 <meta name="twitter:description" content="Independent film production house based 
 in Hyderabad. Currently producing Ajinkyan — a coming-of-age drama set in 
@@ -53,7 +53,7 @@ Sainik School Satara.">
 <meta name="twitter:image" content="assets/copy of kudre logo2.png">
 
 <!-- Canonical -->
-<link rel="canonical" href="https://flashmedia-production.vercel.app/">
+<link rel="canonical" href="https://flashmediaproduction.in/">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="assets/copy of kudre logo2.png">
@@ -66,8 +66,8 @@ Sainik School Satara.">
   "@type": "Organization",
   "name": "Flashmeidia Film Production",
   "alternateName": ["Flash Media Production", "Flashmedia Production"],
-  "url": "https://flashmedia-production.vercel.app",
-  "logo": "https://flashmedia-production.vercel.app/assets/copy of kudre logo2.png",
+  "url": "https://flashmediaproduction.in",
+  "logo": "https://flashmediaproduction.in/assets/copy of kudre logo2.png",
   "description": "Independent film production house based in Hyderabad, India. 
   Currently producing Ajinkyan — a coming-of-age drama set in Sainik School Satara.",
   "foundingDate": "2025",
@@ -123,7 +123,7 @@ Sainik School Satara.">
     "@type": "Place",
     "name": "Sainik School Satara, Maharashtra, India"
   },
-  "image": "https://flashmedia-production.vercel.app/assets/copy of kudre logo2.png",
+  "image": "https://flashmediaproduction.in/assets/copy of kudre logo2.png",
   "productionState": "In Production"
 }
 </script>
@@ -145,7 +145,7 @@ Sainik School Satara.">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://flashmedia-production.vercel.app/">
+    <meta property="og:url" content="https://flashmediaproduction.in/">
     <meta property="og:title" content="Flashmeidia Film Production | Official Website">
     <meta property="og:description" content="Independent film production house based in Hyderabad. Currently producing Ajinkyan — a coming-of-age drama set in Sainik School Satara. One For All, All For One.">
     <meta property="og:image" content="assets/copy of kudre logo2.png">
@@ -154,13 +154,13 @@ Sainik School Satara.">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://flashmedia-production.vercel.app/">
+    <meta name="twitter:url" content="https://flashmediaproduction.in/">
     <meta name="twitter:title" content="Flashmeidia Film Production | Official Website">
     <meta name="twitter:description" content="Independent film production house based in Hyderabad. Currently producing Ajinkyan — a coming-of-age drama set in Sainik School Satara.">
     <meta name="twitter:image" content="assets/copy of kudre logo2.png">
     
     <!-- Canonical -->
-    <link rel="canonical" href="https://flashmedia-production.vercel.app/">
+    <link rel="canonical" href="https://flashmediaproduction.in/">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/copy of kudre logo2.png">
@@ -171,7 +171,7 @@ Sainik School Satara.">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1.0.1">
 
     <!-- Structured Data (JSON-LD) for SEO -->
     <script type="application/ld+json">
@@ -179,9 +179,9 @@ Sainik School Satara.">
       "@context": "https://schema.org",
       "@type": "MovieTheater",
       "name": "Flashmeidia Film Production",
-      "url": "https://flashmedia-production.vercel.app/",
-      "logo": "https://flashmedia-production.vercel.app/assets/copy%20of%20kudre%20logo2.png",
-      "image": "https://flashmedia-production.vercel.app/assets/copy%20of%20kudre%20logo2.png",
+      "url": "https://flashmediaproduction.in/",
+      "logo": "https://flashmediaproduction.in/assets/copy%20of%20kudre%20logo2.png",
+      "image": "https://flashmediaproduction.in/assets/copy%20of%20kudre%20logo2.png",
       "description": "Flashmeidia Film Production is an independent creative studio bringing stories to life through cinematic vision, artistic integrity, and bold creative direction.",
       "address": {
         "@type": "PostalAddress",
@@ -750,11 +750,12 @@ Sainik School Satara.">
         </div>
     </div>
 
-    <script type="module" src="script.js"></script>
+    <script type="module" src="script.js?v=1.0.1"></script>
 
     <!-- ADMIN PORTAL SYNC -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            localStorage.removeItem('fm_project_data');
             try {
                 const stored = localStorage.getItem('fm_project_data');
                 if (!stored) return; // No admin data, fallback to hardcoded defaults

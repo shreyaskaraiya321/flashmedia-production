@@ -2644,3 +2644,8 @@ body.modal-open {
 .announcement-btn:hover {
     background: rgba(196, 145, 106, 0.1);
 }
+/* Hide unwanted dynamic projects from Supabase in the UI */
+section.current-production[data-title*="Midnight Podcast"],
+section.current-production[data-title*="Tech Review"] {
+    display: none !important;
+}

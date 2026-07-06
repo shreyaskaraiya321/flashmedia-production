@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     : `<img src="${project.thumbnail_url || 'https://via.placeholder.com/800x450?text=No+Image'}" alt="${project.title}" style="width:100%; border-radius:6px; display:block; object-fit:cover;">`;
 
                 const projectCardHTML = `
-                    <section class="current-production" style="padding: 0; margin-bottom: 80px;">
+                    <section class="current-production" data-title="${project.title}" style="padding: 0; margin-bottom: 80px;">
                         <div class="section-tag">[ ${project.status.toUpperCase()} ]</div>
                         <h2 class="section-heading">${project.title}</h2>
                         <div class="production-card">

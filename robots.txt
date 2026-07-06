@@ -3,6 +3,6 @@ Allow: /
 Disallow: /admin.html
 Disallow: /admin
 
-Sitemap: https://flashmedia-production.vercel.app/sitemap.xml
+Sitemap: https://flashmediaproduction.in/sitemap.xml
 
-Host: https://flashmedia-production.vercel.app
+Host: https://flashmediaproduction.in
