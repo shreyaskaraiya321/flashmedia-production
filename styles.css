@@ -2640,21 +2640,14 @@ body.modal-open {
     margin: 0 0 32px 0;
 }
 
-.announcement-btn {
-    background: transparent;
-    border: 1px solid #C4916A;
+.announcement-text-only {
     color: #C4916A;
     font-family: var(--font-mono, 'Space Mono', monospace);
     text-transform: uppercase;
     font-size: 12px;
-    padding: 12px 32px;
-    border-radius: 4px;
     cursor: default;
-    transition: all 0.3s ease;
-}
-
-.announcement-btn:hover {
-    background: rgba(196, 145, 106, 0.1);
+    display: inline-block;
+    margin-top: 12px;
 }
 /* Hide unwanted dynamic projects from Supabase in the UI */
 section.current-production[data-title*="Midnight Podcast"],
