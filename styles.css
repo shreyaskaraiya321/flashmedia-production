@@ -151,7 +151,9 @@ section {
 }
 
 .navbar.scrolled {
-    background: var(--bg-color);
+    background: rgba(28, 28, 30, 0.8); /* var(--bg-color) with opacity */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--divider);
     padding: 1rem 5%;
 }
