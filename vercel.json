@@ -1,16 +1,11 @@
 {
   "rewrites": [
-    {
-      "source": "/sitemap.xml",
-      "destination": "/sitemap.xml"
-    },
-    {
-      "source": "/robots.txt",
-      "destination": "/robots.txt"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    {"source": "/sitemap.xml", "destination": "/sitemap.xml"},
+    {"source": "/robots.txt", "destination": "/robots.txt"},
+    {"source": "/about", "destination": "/index.html"},
+    {"source": "/our-work", "destination": "/index.html"},
+    {"source": "/ajinkyan", "destination": "/index.html"},
+    {"source": "/contact", "destination": "/index.html"},
+    {"source": "/(.*)", "destination": "/index.html"}
   ]
 }

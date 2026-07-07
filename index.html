@@ -53,12 +53,12 @@ Sainik School Satara.">
 <meta name="twitter:image" content="assets/copy of kudre logo2.png">
 
 <!-- Canonical -->
-<link rel="canonical" href="https://flashmediaproduction.in/">
+<link rel="canonical" href="https://www.flashmediaproduction.in/">
 
 <!-- Favicon -->
-<link rel="icon" type="image/webp" href="assets/Screenshot 2026-06-27 201140.webp">
-<link rel="shortcut icon" href="assets/Screenshot 2026-06-27 201140.webp">
-<link rel="apple-touch-icon" href="assets/Screenshot 2026-06-27 201140.webp">
+<link rel="icon" type="image/webp" href="assets/Screenshot%202026-06-27%20201140.webp">
+<link rel="shortcut icon" href="assets/Screenshot%202026-06-27%20201140.webp">
+<link rel="apple-touch-icon" href="assets/Screenshot%202026-06-27%20201140.webp">
 
 <script type="application/ld+json">
 {
@@ -210,18 +210,34 @@ Sainik School Satara.">
                 <img src="assets/Screenshot 2026-06-27 201140.webp" alt="Flashmeidia Film Production Logo" width="72" height="72" loading="eager">
             </div>
             <div class="nav-links desktop-only">
-                <a href="#home" onclick="showHomeView()">Home</a>
-                <a href="#about" onclick="showAboutView(event)">About</a>
-                <a href="#work" onclick="showWorkView(event)">Our Work</a>
-                <a href="#ajinkyan" onclick="showAjinkyanView(event)">Ajinkyan</a>
-                <a href="#contact" onclick="showContactView(event)">Contact</a>
+                <a href="/" onclick="showHomeView(event)">Home</a>
+                <a href="/about" onclick="showAboutView(event)">About</a>
+                <a href="/our-work" onclick="showWorkView(event)">Our Work</a>
+                <a href="/ajinkyan" onclick="showAjinkyanView(event)">Ajinkyan</a>
+                <a href="/contact" onclick="showContactView(event)">Contact</a>
             </div>
             <div class="nav-actions">
                 <button class="btn ghost outline nav-contact-btn" onclick="openApplyModal()" style="border: 1px solid #C4916A; color: #C4916A; background: transparent; padding: 10px 24px; border-radius: 6px; font-family: var(--font-body); font-weight: 500; font-size: 14px;">Contact
                     for a Role</button>
+                <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="mobile-drawer-inner">
+            <a href="/" class="drawer-link" onclick="showHomeView(event); toggleMobileMenu();">Home</a>
+            <a href="/about" class="drawer-link" onclick="showAboutView(event); toggleMobileMenu();">About</a>
+            <a href="/our-work" class="drawer-link" onclick="showWorkView(event); toggleMobileMenu();">Our Work</a>
+            <a href="/ajinkyan" class="drawer-link" onclick="showAjinkyanView(event); toggleMobileMenu();">Ajinkyan</a>
+            <a href="/contact" class="drawer-link" onclick="showContactView(event); toggleMobileMenu();">Contact</a>
+        </div>
+    </div>
 
     <!-- Main Content Wrapper -->
     <div id="main-content">
@@ -327,11 +343,11 @@ Sainik School Satara.">
                 <img src="assets/Screenshot 2026-06-27 201140.webp" alt="Flashmeidia Film Production" loading="lazy">
             </div>
             <div class="footer-nav">
-                <a href="#home" onclick="showHomeView()">Home</a>
-                <a href="#about" onclick="showAboutView(event)">About</a>
-                <a href="#work" onclick="showWorkView(event)">Our Work</a>
-                <a href="#ajinkyan" onclick="showAjinkyanView(event)">Ajinkyan</a>
-                <a href="#contact" onclick="showContactView(event)">Contact Us</a>
+                <a href="/" onclick="showHomeView(event)">Home</a>
+                <a href="/about" onclick="showAboutView(event)">About</a>
+                <a href="/our-work" onclick="showWorkView(event)">Our Work</a>
+                <a href="/ajinkyan" onclick="showAjinkyanView(event)">Ajinkyan</a>
+                <a href="/contact" onclick="showContactView(event)">Contact Us</a>
             </div>
             <div class="footer-socials">
                 <a href="https://www.instagram.com/flashmedia.productions/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
