@@ -89,11 +89,41 @@ function transitionToView(targetId, event) {
 }
 
 // 🔓 ATTACHED TO WINDOW: So HTML buttons can click them!
-window.showHomeView = function (event) { transitionToView('main-content', event); };
-window.showAboutView = function (event) { transitionToView('about', event); };
-window.showWorkView = function (event) { transitionToView('work-view', event); };
-window.showAjinkyanView = function (event) { transitionToView('ajinkyan-view', event); };
-window.showContactView = function (event) { transitionToView('contact-view', event); };
+window.showHomeView = function (event) { 
+    transitionToView('main-content', event); 
+    window.history.pushState({view: 'home'}, '', '/');
+    document.title = "Flashmedia Production | Official Website";
+};
+window.showAboutView = function (event) { 
+    transitionToView('about', event); 
+    window.history.pushState({view: 'about'}, '', '/about');
+    document.title = "About | Flashmedia Production";
+};
+window.showWorkView = function (event) { 
+    transitionToView('work-view', event); 
+    window.history.pushState({view: 'work-view'}, '', '/our-work');
+    document.title = "Our Work | Flashmedia Production";
+};
+window.showAjinkyanView = function (event) { 
+    transitionToView('ajinkyan-view', event); 
+    window.history.pushState({view: 'ajinkyan-view'}, '', '/ajinkyan');
+    document.title = "Ajinkyan | Original Film | Flashmedia Production";
+};
+window.showContactView = function (event) { 
+    transitionToView('contact-view', event); 
+    window.history.pushState({view: 'contact-view'}, '', '/contact');
+    document.title = "Contact | Flashmedia Production";
+};
+
+// Handle back/forward buttons
+window.addEventListener('popstate', (event) => {
+    const path = window.location.pathname;
+    if (path === '/about') { transitionToView('about'); document.title = "About | Flashmedia Production"; }
+    else if (path === '/our-work') { transitionToView('work-view'); document.title = "Our Work | Flashmedia Production"; }
+    else if (path === '/ajinkyan') { transitionToView('ajinkyan-view'); document.title = "Ajinkyan | Original Film | Flashmedia Production"; }
+    else if (path === '/contact') { transitionToView('contact-view'); document.title = "Contact | Flashmedia Production"; }
+    else { transitionToView('main-content'); document.title = "Flashmedia Production | Official Website"; }
+});
 
 // Initial load animation
 document.addEventListener('DOMContentLoaded', () => {
@@ -291,3 +321,24 @@ if (applyForm) {
         }
     });
 }
+
+// ==========================================
+// MOBILE MENU TOGGLE
+// ==========================================
+window.toggleMobileMenu = function() {
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    
+    if (mobileBtn && mobileDrawer) {
+        mobileBtn.classList.toggle('active');
+        mobileDrawer.classList.toggle('open');
+    }
+};
+
+// Direct URL access logic
+const path = window.location.pathname;
+if (path === '/about') showAboutView();
+else if (path === '/our-work') showWorkView();
+else if (path === '/ajinkyan') showAjinkyanView();
+else if (path === '/contact') showContactView();
+else showHomeView();
