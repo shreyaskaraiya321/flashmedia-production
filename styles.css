@@ -36,6 +36,13 @@ Colors:
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 body {
@@ -43,8 +50,13 @@ body {
     color: var(--text-primary);
     font-family: var(--font-body);
     line-height: 1.6;
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 a, button {
@@ -2075,7 +2087,7 @@ body.modal-open {
 
 .character-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 24px;
     align-items: stretch;
 }
@@ -2092,8 +2104,8 @@ body.modal-open {
 }
 
 .character-card:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    max-width: calc(50% - 12px);
+    grid-column: auto;
+    max-width: none;
 }
 
 .character-name {
@@ -2550,7 +2562,7 @@ body.modal-open {
 
 .character-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 24px;
     align-items: stretch;
 }

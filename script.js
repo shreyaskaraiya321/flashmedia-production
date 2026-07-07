@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             .select('*')
             .order('created_at', { ascending: false });
 
-        if (!projectError && projects) {
+        if (!projectError && projects && projects.length > 0) {
             workViewContainer.innerHTML = ''; // Clear empty container
 
             projects.forEach(project => {

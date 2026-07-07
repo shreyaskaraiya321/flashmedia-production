@@ -238,7 +238,7 @@ Sainik School Satara.">
                     vision, artistic integrity, and bold creative direction.
                 </p>
                 <div class="hero-ctas">
-                    <button class="btn filled">Explore Our Work</button>
+                    <button class="btn filled" onclick="showWorkView(event)">Explore Our Work</button>
                     <button class="btn ghost outline" onclick="openApplyModal()">Contact for a Role</button>
                 </div>
             </div>
@@ -361,52 +361,41 @@ Sainik School Satara.">
                 </div>
             </div>
             <div class="about-image">
-                <img src="assets/copy of kudre logo2.png" alt="Shubham Kudre Founder Flashmeidia Film Production Hyderabad" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block;" loading="lazy">
+                <img src="assets/poster.jpg" alt="Shubham Kudre Founder Flashmeidia Film Production Hyderabad" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block;" loading="lazy">
             </div>
         </div>
     </section>
 
     <!-- Work View Wrapper -->
-    <div id="work-view" class="hidden" style="max-width: 1100px; margin: 0 auto; padding: 100px 40px;">
-        <!-- CURRENT PROJECT DISPLAY SECTION -->
+    <!-- Supabase dynamic projects container -->
+    <div id="work-view" class="hidden view-section" style="max-width: 1100px; margin: 0 auto; padding: 100px 40px 0 40px;">
+    </div>
+
+    <!-- Hardcoded Ajinkyan Card (Shown alongside Work View) -->
+    <div id="work-view-hardcoded" style="display: none; max-width: 1100px; margin: 0 auto; padding: 0 40px 100px 40px;">
         <section class="current-production" id="production" style="padding: 0; margin-bottom: 80px;">
-            <div class="section-tag" id="pub-section-tag">[ NOW FILMING ]</div>
-            <h2 class="section-heading" id="pub-section-heading">Inside the Frame</h2>
+            <div class="section-tag" id="pub-section-tag" style="font-family: var(--font-mono, 'Space Mono', monospace); color: var(--accent, #C4916A);">[ NOW FILMING ]</div>
+            <h2 class="section-heading" id="pub-section-heading" style="font-family: var(--font-heading, 'Cormorant Garamond', serif);">Inside the Frame</h2>
 
-            <!-- ANNOUNCEMENT BANNER -->
-            <div id="pub-announcement-banner" style="display: none; background: #C4916A; color: #1C1C1E; padding: 12px; border-radius: 4px; text-align: center; margin-bottom: 24px; font-weight: 600;">
-            </div>
-
-            <div class="production-card">
-                <!-- PROJECT POSTER -->
-                <img id="pub-poster-img" src="" alt="Ajinkyan Official Poster Flashmeidia Film Production" style="display: none; width: 100%; border-radius: 8px; margin-bottom: 24px; object-fit: cover;" loading="lazy">
-
-                <h3 class="production-title" id="pub-project-name">Ajinkyan</h3>
-                <div class="production-genre" id="pub-genre-tags">[ DRAMA · SOCIAL ]</div>
+            <div class="production-card" style="border-left: 2px solid var(--accent, #C4916A); padding-left: 24px;">
+                <h3 class="production-title" id="pub-project-name" style="font-family: var(--font-heading, 'Cormorant Garamond', serif); font-style: italic; color: var(--accent, #C4916A);">Ajinkyan</h3>
+                <div class="production-genre" id="pub-genre-tags" style="font-family: var(--font-mono, 'Space Mono', monospace); color: var(--text-muted, #7A7575);">[ DRAMA · SOCIAL ]</div>
                 <p class="production-story" id="pub-story">
-                    Ajinkyan is a deeply human story set against the backdrop of a school, tracing the life of a soldier
-                    — his sacrifices, his identity, and the world he leaves behind. A story about what it means to
-                    serve and to belong.
+                    Ajinkyan is a deeply human story set against the backdrop of a school, tracing the life of a soldier — his sacrifices, his identity, and the world he leaves behind. A story about what it means to serve and to belong.
                 </p>
 
-                <!-- DIRECTOR'S NOTE -->
-                <div id="pub-director-note-container" style="display: none; margin-top: 24px; margin-bottom: 24px; padding: 16px; border-left: 2px solid #C4916A; font-style: italic; color: var(--text-muted);">
-                </div>
 
-                <div class="production-media">
-                    <div class="media-box-wrapper">
-                        <div class="timer-label text-center mb-small" style="color: var(--accent); margin-bottom: 0.5rem;">TEASER</div>
-                        <video id="pub-teaser-video" src="assets/ajinkyan-teaser.mp4" controls playsinline preload="none" style="width:100%; border-radius:6px; background:#1C1C1E; display:block;">
-                        </video>
-                        <div style="text-align: center; margin-top: 12px;">
-                            <a id="pub-teaser-link" href="https://www.instagram.com/reel/DZsAuJhziv8/" target="_blank" class="instagram-reel-link">View on Instagram ↗</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
-
     </div>
+
+    <style>
+        /* Automatically show the hardcoded card when Work View is active */
+        #work-view:not(.hidden) ~ #work-view-hardcoded {
+            display: block !important;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+    </style>
 
     <!-- Ajinkyan Dedicated View -->
     <div id="ajinkyan-view" class="hidden ajinkyan-page">
@@ -422,8 +411,7 @@ Sainik School Satara.">
         <div class="ajinkyan-teaser-section">
             <div class="ajinkyan-teaser-container">
                 <div class="ajinkyan-teaser-label">[ OFFICIAL TEASER ]</div>
-                <video id="aj-teaser-video" src="assets/ajinkyan-teaser.mp4" controls playsinline preload="none" class="ajinkyan-teaser-video">
-                </video>
+                <video id="aj-teaser-video" src="assets/ajinkyan-teaser.mp4" controls playsinline preload="metadata" class="ajinkyan-teaser-video"></video>
                 <div class="ajinkyan-teaser-link-wrap">
                     <a id="aj-teaser-link" href="https://www.instagram.com/reel/DZsAuJhziv8/" target="_blank" class="contact-link ajinkyan-teaser-link">View on Instagram ↗</a>
                 </div>
